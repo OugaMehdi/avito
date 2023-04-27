@@ -1,0 +1,109 @@
+.navbar{
+    background-color: white;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.1) 0px 1px 0px 0px;
+}
+
+.navbar1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: rgb(45, 45, 45);
+    font-size: 12px;
+}
+
+.navbar1 ul {
+    width: 88%;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    margin: auto;
+}
+
+.navbar1 ul li{
+    margin: auto;
+    text-decoration: none;
+    list-style: none;
+    margin: auto 1.5rem auto 0;
+}
+
+.navbar1 ul li:last-child{
+    margin-left: auto;
+    a{
+        display: flex;
+        align-items: center;
+        margin-right: 70px;
+    }
+    a svg{
+        margin-right: 5px;
+    }
+}
+
+.navbar1 ul li a:not(.home):hover {
+    background-color: white;
+    color: #000000;
+}
+
+.navbar1 ul li a{
+    color: white;
+    text-decoration: none;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.home svg {
+    margin-top: 5px;
+}
+
+.navbar2{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.navbar2 div{
+    margin-left: auto;
+    width: max-content;
+    display: flex;
+}
+
+.navbar2 div button{
+    background: transparent;
+    border: 0;
+    margin: auto 1rem;
+}
+
+
+.navbar2 div button:first-child{
+    padding: 5px 10px;
+    display: inline-flex;
+    align-items: end;
+    svg{
+        margin-left: 5px;
+    }
+}
+.navbar2 div button:first-child:hover{
+    background-color: #f2f2f2;
+}
+
+.navbar2 div button:last-child{
+    background-color: #29a160;
+    color: white;
+    border-radius: 100px;
+    padding: 8px 30px;
+    display: flex;
+    align-items: center;
+    svg{
+        margin-right: 5px;
+        margin-bottom: 1px;
+    }
+}
+
+.navbar2 div button:last-child:hover{
+    background-color: #20804C;
+}
