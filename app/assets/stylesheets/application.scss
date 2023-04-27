@@ -20,36 +20,3 @@
     display: flex;
     flex-direction: column;
   }
-  
-  footer {
-    display: block;
-    background-color: rgb(242, 242, 242);
-    color: rgb(74, 74, 74);
-    border-top: 1px solid rgb(242, 242, 242);
-  } 
-  footer ul.list-unstyled li a i {
-    transition: all 0.2s ease-in-out;
-  }
-  
-  footer ul.list-unstyled li a i:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  ul{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0px;
-    margin: 0px;
-    list-style: none;
-    -webkit-box-align: center;
-    align-items: center;
-  }
-
-  footer button{
-    font-size: 14px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(102, 102, 102);
-    border: 1px solid rgb(155, 155, 155);
-    letter-spacing: 1.05px;
-  }
