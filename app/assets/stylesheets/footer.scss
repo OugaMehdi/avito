@@ -1,0 +1,173 @@
+footer{
+    margin-bottom: 54px;
+    background-color: rgb(242, 242, 242);
+    color: rgb(74, 74, 74);
+    border-top: 1px solid rgb(242, 242, 242);
+}
+
+  .container1{
+    background-color: rgb(242, 242, 242);
+    padding: 32px 20px;
+  }
+
+  .renseignements{
+    max-width: 1280px;
+    margin:0px auto;
+    padding: 0px 16px;
+  }
+
+  .renseignements-list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .renseignements li{
+    margin:0px;
+  }
+
+  .button-icon{
+    margin-left: -2px;
+    margin-right: 10px;
+  }
+
+  .arabic-button{
+    font-size: 14px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(102, 102, 102);
+    border: 1px solid rgb(155, 155, 155);
+    letter-spacing: 1.05px;
+  }
+
+  .icons{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+  }
+
+  .icon-list{
+    margin-right:16px;
+  }
+
+  .icon-item{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    width: 38px;
+    border-radius: 100px;
+  }
+
+  .iconhover{
+    transition: all 0.2s ease-in-out;
+
+  }
+
+  .iconhover:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .icon-item.facebook{
+    background-color: rgb(59, 89, 152);
+  }
+
+  .icon-item.twitter{
+    background-color: rgb(29, 161, 242);
+  }
+
+  .icon-item.instagram{
+    background-color: rgb(225, 48, 108);
+  }
+
+  .icon-item.youtube{
+    background-color: rgb(255, 0, 0);
+  }
+
+  .icon-item.linkedin{
+    background-color: rgb(0, 119, 181);
+  }
+
+  .container2{
+    max-width: 1280px;
+    display: flex;
+    -webkit-box-pack: justify;
+    margin: 0px auto;
+    justify-content: space-between;
+  }
+
+  .container3{
+    width:30%;
+    display: block;
+  }
+
+  .container3 h4{
+    color: rgb(74, 74, 74);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.15px;
+  }
+
+  .neuf{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  .neuf div a{
+    margin-right: 32px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .neuf div a p{
+    color: rgb(45, 45, 45);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.15px;
+    text-transform: uppercase;
+    margin: 0px 0px 0px 12px;
+  }
+
+  .neuf div a span{
+    padding: 0px 8px;
+    line-height: 16px;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    background-color: rgb(255, 76, 89);
+    border-radius: 24px;
+    position: relative;
+    right: 0px;
+    margin-left: 8px;
+  }
+
+  .badges{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .badges:first-child {
+    margin-right: 16px;
+  }
+
+  .downloads{
+    height: 48px;
+    width: 167px;
+    max-width: 100%;
+    max-height: 100%;
+    transition: opacity 250ms ease 0s;
+    opacity: 1;
+  }
