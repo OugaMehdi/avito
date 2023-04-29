@@ -1,9 +1,9 @@
-.navbar{
+.navbar-container{
     background-color: white;
     position: sticky;
     top: 0;
     z-index: 10;
-    width: 100%;
+    width: 100vw;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.1) 0px 1px 0px 0px;
 }
 
@@ -51,8 +51,8 @@
 .home:first-child::after{
     content: "";
     position: absolute;
-    top: 14%;
-    height: 14px;
+    top: 13%;
+    height: 13px;
     width: 1.5px;
     left: 11.5%;
     background: white;
@@ -63,10 +63,6 @@
     text-decoration: none;
     padding: 4px 10px;
     text-align: center;
-}
-
-.home svg {
-    margin-top: 5px;
 }
 
 .navbar2{
