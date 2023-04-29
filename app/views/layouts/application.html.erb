@@ -16,8 +16,12 @@
   </head>
 
   <body>
-  <%= render 'layouts/navigation' %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
+    <div id="page-container">
+      <%= render 'layouts/navigation' %>
+      <main>
+        <%= yield %>
+      </main>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
