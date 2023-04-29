@@ -3,7 +3,7 @@
     position: sticky;
     top: 0;
     z-index: 10;
-    width: 100vw;
+    width: 100%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.1) 0px 1px 0px 0px;
 }
 
@@ -77,6 +77,18 @@
     margin-left: auto;
     width: max-content;
     display: flex;
+}
+
+.login-button{
+    margin: auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(74, 74, 74);
+}
+
+.login-button:hover{
+    text-decoration: none;
+    color: rgb(74, 74, 74);
 }
 
 .navbar2 div button{
