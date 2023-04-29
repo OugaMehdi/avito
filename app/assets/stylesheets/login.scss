@@ -1,0 +1,61 @@
+.login-form{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 60px auto;
+}
+
+.form-container{
+    width: 30%;
+    margin-right: 18%;
+}
+
+.form-group input{
+    height: 50px;
+}
+
+.email-input, .password-input{
+    position: relative;
+}
+
+.email-input img, .password-input img{
+    position: absolute;
+    top: 25%;
+    left: .5rem;
+}
+
+.email-input .form-control, .password-input .form-control{
+    padding-left: 2.5rem;
+}
+
+.form-group small{
+    text-decoration: underline;
+}
+
+.separator{
+    text-transform: uppercase;
+    color: rgb(102, 102, 102);
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.separator::before{
+    content: "";
+    width: 38%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color: rgb(208, 208, 208);
+}
+
+.separator::after{
+    content: "";
+    width: 38%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background-color: rgb(208, 208, 208);
+}
