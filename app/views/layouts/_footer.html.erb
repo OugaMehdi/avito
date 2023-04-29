@@ -1,48 +1,34 @@
-<footer class="container">
-    <div class="row">
-        <div class="col-md-8">Aide et Renseignements</div>
-        <div class="col-md-4"><button type="button" class="btn btn-default">العربية</button></div>
+<footer style="background-color: #f2f2f2;" class="footer">
+  <div class="container1">
+    <div class="container2">
+      <h4>Aide et Renseignements</h4>
+      <div ><button class="btn btn-default arabic-button" type="button"><span class="button-icon"><%= image_tag "svg/arabic-button.svg" %></span>العربية</button></div>
     </div>
-    <div>
-        <div>
-            <div></div>
-            <div></div>
+  </div>
+  <div class="container1">
+    <div class="container2">
+      <div class="container3">
+        <h4>NEUF</h4>
+        <div class="neuf">
+          <div><a href="#" ><%= image_tag "svg/auto-neuf.svg" %><p>AUTO NEUF</P><span class="new">NEW</span></a></div>
+          <div><a href="#"><%= image_tag "svg/immo-neuf.svg" %><p>IMMO NEUF</P></a></div>
         </div>
-        <div>
+        <h4 class="mb-0">Téléchargez l'application gratuitement:</h4>
+        <div class="badges">
+          <a href="#" class=""><%= image_tag("svg/play-store-badge.svg", class:'downloads iconhover') %></a>
+          <a href="#" class=""><%= image_tag("svg/app-store-badge.svg", class:'downloads iconhover') %></a>
         </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-      <ul class="list-unstyled" id="aide-renseignements">
-        <li>Aide et Renseignements</li>
-        <li class="ml-auto"><button type="button" class="btn btn-default">العربية</button></li>
-      </ul>
       </div>
-      <div class="col-md-4">
-        <h5>Neuf</h5>
-        <ul class="list-unstyled">
-          <li><a href="#">AUTO NEUF</a></li>
-          <li><a href="#">IMMOBILIER NEUF</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h5>Socials</h5>
-        <ul class="list-unstyled" id="socials">
-          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-          <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+      <div>
+        <h5 style="font-size: 17px;">Suivez nous sur:</h5>
+        <ul class="icons">
+          <li class="icon-list"><a href="#" class="icon-item facebook iconhover"><%= image_tag("svg/facebook.svg") %></a></li>
+          <li class="icon-list"><a href="#" class="icon-item twitter iconhover"><%= image_tag("svg/twitter.svg") %></a></li>
+          <li class="icon-list"><a href="#" class="icon-item instagram iconhover"><%= image_tag("svg/instagram.svg") %></a></li>
+          <li class="icon-list"><a href="#" class="icon-item youtube iconhover"><%= image_tag("svg/youtube.svg") %></a></li>
+          <li class="icon-list"><a href="#" class="icon-item linkedin iconhover"><%= image_tag("svg/linkedin.svg") %></a></li>
         </ul>
       </div>
     </div>
-    <div class="row mt-4">
-      <div class="col-md-12">
-        <p class="mb-0">Téléchargez l'application gratuitement:</p>
-        <div class="d-flex justify-content-center">
-          <a href="#" class="btn btn-primary mr-3"><i class="fab fa-google-play"></i> Google Play</a>
-          <a href="#" class="btn btn-primary"><i class="fab fa-app-store"></i> App Store</a>
-        </div>
-      </div>
-    </div>
+  </div>
 </footer>
