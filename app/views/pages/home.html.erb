@@ -1,2 +1,50 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="app-container">
+    <div id="search-bar-container">
+        <form id="search-form">
+            <div id="search-items">
+                <div id="search-options">
+                    <div class="search-bar-container1">
+                        <div id="search-bar-container2">
+                            <div id="input-container" tabindex="-1">
+                                <div id="icon-container"><%= image_tag("svg/search-bar-icon.svg") %></div>
+                                <input type="text" autocomplete="off" name="searchbar" placeholder="Que recherchez-vous?" class="searchbar" value="">
+                                <div id="input-seperator"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="search-bar-container1">
+                        <div>
+                            <button class="category-dropdown-container" type="button">
+                                <%= image_tag("svg/category-dropdown-icon.svg") %>
+                                <span id="category-dropdown-text">Choisissez une catégorie</span>
+                                <%= image_tag("svg/category-dropdown-button.svg") %>
+                            </button>
+                            <div id="category-dropdown-seperator"> </div>
+                        </div>
+                    </div>
+                    <div class="search-bar-container1">
+                        <div style="position: relative;">
+                            <button id="city-dropdown" type="button">
+                                <%= image_tag("svg/city-dropdown-icon.svg")%>
+                                <span id="city-dropdown-text">Tout le Maroc</span>
+                                <%= image_tag("svg/city-dropdown-button.svg")%>
+                            </button>
+                            <div id="city-dropdown-seperator"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="search-options"></div>
+                <div id="search-categories"></div>
+                <div id="search-options"></div>
+            </div>
+            <div id="seperator"></div>
+            <div id="search-button-container">
+                <button type="submit" aria-label="Rechercher" id="search-button">
+                    <span id="search-button-icon"><%= image_tag("svg/search-button-icon.svg") %></span>
+                    Rechercher ( 1 132 724 )
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
