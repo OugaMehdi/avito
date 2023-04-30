@@ -1,8 +1,9 @@
-.navbar{
+.navbar-container{
     background-color: white;
-    width: 100%;
     position: sticky;
     top: 0;
+    z-index: 10;
+    width: 100%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(0, 0, 0, 0.1) 0px 1px 0px 0px;
 }
 
@@ -47,15 +48,21 @@
     color: #000000;
 }
 
+.home:first-child::after{
+    content: "";
+    position: absolute;
+    top: 13%;
+    height: 13px;
+    width: 1.5px;
+    left: 11.5%;
+    background: white;
+}
+
 .navbar1 ul li a{
     color: white;
     text-decoration: none;
     padding: 4px 10px;
     text-align: center;
-}
-
-.home svg {
-    margin-top: 5px;
 }
 
 .navbar2{
@@ -70,6 +77,18 @@
     margin-left: auto;
     width: max-content;
     display: flex;
+}
+
+.login-button{
+    margin: auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(74, 74, 74);
+}
+
+.login-button:hover{
+    text-decoration: none;
+    color: rgb(74, 74, 74);
 }
 
 .navbar2 div button{
