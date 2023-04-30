@@ -1,0 +1,17 @@
+<%= form_with(model: sous_categorie) do |form| %>
+  <% if sous_categorie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sous_categorie.errors.count, "error") %> prohibited this sous_categorie from being saved:</h2>
+
+      <ul>
+        <% sous_categorie.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

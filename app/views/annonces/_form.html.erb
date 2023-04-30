@@ -1,0 +1,17 @@
+<%= form_with(model: annonce) do |form| %>
+  <% if annonce.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(annonce.errors.count, "error") %> prohibited this annonce from being saved:</h2>
+
+      <ul>
+        <% annonce.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
