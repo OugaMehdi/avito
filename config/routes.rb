@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :favoris
+  resources :sous_categories
+  resources :categories
+  resources :commandes
+  resources :villes
+  resources :utilisateurs
+  resources :annonces
+  get 'utilisateurs/new'
+  get 'villes/new'
   root 'pages#home'
 
   get 'login' => 'pages#login'
