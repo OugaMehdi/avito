@@ -1,17 +1,75 @@
-<%= form_with(model: utilisateur) do |form| %>
-  <% if utilisateur.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(utilisateur.errors.count, "error") %> prohibited this utilisateur from being saved:</h2>
-
-      <ul>
-        <% utilisateur.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<%= form_with(model: utilisateur, :html => {class: "register-form", role: "form"}) do |f| %>
+<%= render 'shared/error_messages' %>
+<div class="form-container">
+    <h5 class="font-weight-bold">Créer un compte Avito.ma</h5>
+    <div role='button' class="d-flex justify-content-center mt-4">
+        <div class="border py-2 pl-3 pr-4 d-flex justify-content-center mr-5 rounded">
+            <img src="assets/svg/gmailLogin.svg" class="mr-2">
+            <small class="w-100">Se connecter</small>
+        </div>
+        <div role='button'  class="border py-2 pl-3 pr-4 d-flex justify-content-center rounded">
+            <img src="assets/svg/fbLogin.svg" class="mr-2">
+            <small class="w-100">Se connecter</small>
+        </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="register-info" >
+        <img src="assets/svg/info-register.svg">
+        <small>
+            En utilisant l'authentification facile, vous pouvez remplir vos données 
+            supplémentaires ultérieurement dans les paramètres de votre compte
+        </small>
+    </div>
+    <div class="position-relative">
+        <div class="separator">ou bien</div>
+    </div>
+    <p class="text-secondary mt-4">Entrez vos coordonnées ci-dessous</p>
+    <div class="form-group">
+      <label for="inputEmail">Nom</label>
+      <div class="email-input">
+          <%= image_tag('svg/user-icon.svg') %>
+          <%= f.text_field :nom , class: "form-control", placeholder: "Votre nom" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail">E-mail</label>
+      <div class="email-input">
+          <%= image_tag('svg/email.svg') %>
+          <%= f.email_field :email, class: "form-control", placeholder: "E-mail" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputTel">Téléphone</label>
+      <div class="email-input">
+          <%= image_tag('svg/tel.svg') %>
+          <%= f.text_field :tel , class: "form-control" , placeholder: "06XXXXXXXX" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Mot de passe</label>
+      <div class="password-input">
+          <%= image_tag('svg/password.svg') %>
+          <%= f.password_field :password , class: "form-control" , placeholder: "Choisissez un mot de passe" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPasswordConfirm">Confirmer le mot de passe</label>
+      <div class="password-input">
+          <%= image_tag('svg/password.svg') %>
+          <%= f.password_field :password_confirmation , class: "form-control" , placeholder: "Confirmer le mot de passe" %>
+      </div>
+    </div>
+    <div class="form-group">
+        <label>Ville</label>
+        <%= f.select :ville_id , options_for_select(@villes.collect{|v| [v.nom_ville, v.id]}) ,class: "form-control" %>
+    </div>
+    <div class="form-check d-flex">
+        <input type="checkbox" class="form-check-input" id="checkTerms" required>
+        <small class="form-check-label" for="checkTerms">
+            J’ai lu et j’accepte <a href="#">les conditions d’utilisation.</a> 
+            Et je donne mon accord au traitement <a href="#">de mes données personnelles.</a>
+        </small>
+    </div>
+    <%= f.submit "créer un compte" , class: "btn btn-primary w-100 mt-4 text-uppercase" %>
+    <p class="mt-4 text-center" >Vous avez déjà un compte? <%= link_to "Se connecter", login_path %></p>
+</div>
 <% end %>

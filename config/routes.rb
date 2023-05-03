@@ -5,13 +5,16 @@ Rails.application.routes.draw do
   resources :commandes
   resources :villes
   resources :utilisateurs
-  resources :annonces
-  get 'utilisateurs/new'
+  resources :annonces, only: [:create , :destroy]
+
   get 'villes/new'
   root 'pages#home'
+  get 'register' => 'utilisateurs#new'
+  get '/reglage/:id', to: 'utilisateurs#edit', as: 'reglage'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 
-  get 'login' => 'pages#login'
-  get 'register' => 'pages#register'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
