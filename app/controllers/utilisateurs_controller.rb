@@ -1,5 +1,5 @@
 class UtilisateursController < ApplicationController
-
+  before_action :bon_utilisateur, only: [:edit, :update]
   before_action :authenticate, :only => [:index, :edit, :update, :destroy]
 
   # GET /utilisateurs or /utilisateurs.json
