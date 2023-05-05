@@ -32,4 +32,179 @@
 
 .register-form select{
     height: 50px;
+    width: 100%;
+}
+
+
+
+//Style for edit utilisateurs
+.container-reglage{
+    width: 84%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#options{
+    display: flex;
+    flex-direction: column;
+    width: 284px;
+}
+
+#options button:hover{
+    background-color: rgba(208,208,208,255);
+}
+
+#btn-info, #btn-mdp, #btn-notif{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 8px;
+    background-color: rgb(242, 242, 242);
+    border: none;
+    height: 48px;
+    color: rgb(102, 102, 102);
+    letter-spacing: 0.15px;
+}
+
+#btn-info{
+    color: rgb(46, 107, 255);
+    
+}
+
+#dropdown-mdp, #dropdown-notif{
+    rotate: -90deg;
+}
+
+#dropdown-info {
+    rotate: -90deg;
+    fill: rgb(46, 107, 255);
+}
+
+.edit-form{
+    margin-top: 12px;
+    width: 67%;
+}
+
+.edit-form label:not(.toggle-control):before{
+    content: "* ";
+    color: red;
+    font-size: 18px;
+}
+
+.edit-form input:not(#telCheck, .sauvegarder-btn), .edit-form select{
+    border-radius: 4px;
+    height: 53px;
+    width: 95%;
+    color: black;
+}
+
+.edit-form input:not(#readonly-input input, #telCheck, .sauvegarder-btn):hover{
+    border-color: rgba(0, 0, 0, 0.4);
+}
+
+#telCheck {
+    width: 16px;
+    height: 16px;
+    margin-top: 5px;
+}
+
+#readonly-input{
+    input{
+        cursor: no-drop;
+        border-color: none;
+        background-color: rgba(208,208,208,255);
+    }
+    img{
+        margin-top: 1px;
+    }
+}
+
+.email-notif{
+    font-size: 13px;
+    width: 90%;
+    border-radius: 4px;
+    padding: 24px 16px 12px;
+    border-left: 4px solid rgb(46, 107, 255);
+    background-color: rgb(234, 240, 255);
+    color: rgb(36, 85, 204);
+    p{
+        font-weight: 500;
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+}
+
+.sauvegarder-btn{
+    width: 25%;
+    height: 42px;
+    margin-left: auto;
+    margin-right: 5%;
+}
+
+//toggle
+$toggle-background-color-on: dodgerblue;
+$toggle-background-color-off: darkgray;
+$toggle-control-color: white;
+$toggle-width: 40px;
+$toggle-height: 20px;
+$toggle-gutter: 5px;
+$toggle-radius: 100%;
+$toggle-control-speed: .15s;
+$toggle-control-ease: ease-in;
+
+
+$toggle-radius: $toggle-height / 2;
+$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
+
+.toggle-control {
+    margin-top: 40px;
+  display: block;
+  position: relative;
+  padding-left: $toggle-width;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input:checked ~ .control {
+    background-color: $toggle-background-color-on;
+    
+    &:after {
+      left: $toggle-width - $toggle-control-size - $toggle-gutter;
+    }
+  }
+
+  .control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $toggle-height;
+    width: $toggle-width;
+    border-radius: $toggle-radius;
+    background-color: $toggle-background-color-off;
+    transition: background-color $toggle-control-speed $toggle-control-ease;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: $toggle-gutter;
+      top: $toggle-gutter;
+      width: $toggle-control-size;
+      height: $toggle-control-size;
+      border-radius: $toggle-radius;
+      background: $toggle-control-color;
+      transition: left $toggle-control-speed $toggle-control-ease;
+    }
+  }
 }

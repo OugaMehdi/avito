@@ -30,7 +30,7 @@
                             <%= image_tag('svg/profile-icon.svg') %>
                             <%= @utilisateur_courant.nom %>
                         </div>
-                        <%= image_tag('svg/dropdown.svg') %>
+                        <img src="assets/svg/dropdown.svg" class="dropdown-icon" />
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                         <div class="dropdown-item" type="button">
@@ -51,7 +51,7 @@
                         </div>
                         <div class="dropdown-item" type="button">
                             <%= image_tag('svg/reglages.svg') %>
-                            <%= link_to "Régalages", reglage_path(@utilisateur_courant) %>
+                            <%= link_to "Régalages", reglage_path %>
                         </div>
                         <div class="dropdown-item" type="button">
                             <%= image_tag('svg/deconnecter.svg') %>

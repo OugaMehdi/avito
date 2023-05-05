@@ -131,6 +131,7 @@
     margin-top: 4px;
 }
 .profile-btn{
+    position: relative;
     display: flex;
     align-items: center;
     width: 188px;
@@ -147,9 +148,11 @@
     font-size: 16px;
 }
 
-.profile-btn:last-child{
-    margin-left: 20px;
+.dropdown-icon{
+    position: absolute;
+    right: 0;
 }
+
 
 .profile-btn:hover{
     color: rgb(74, 74, 74);

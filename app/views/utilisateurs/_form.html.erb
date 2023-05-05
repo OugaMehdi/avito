@@ -60,7 +60,9 @@
     </div>
     <div class="form-group">
         <label>Ville</label>
-        <%= f.select :ville_id , options_for_select(@villes.collect{|v| [v.nom_ville, v.id]}) ,class: "form-control" %>
+        <div>
+            <%= f.select :ville_id , options_for_select(@villes.collect{|v| [v.nom_ville, v.id]}) ,class: "form-control" %>
+        </div>
     </div>
     <div class="form-check d-flex">
         <input type="checkbox" class="form-check-input" id="checkTerms" required>
