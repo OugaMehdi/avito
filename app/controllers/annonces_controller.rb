@@ -24,6 +24,14 @@ class AnnoncesController < ApplicationController
   def create
     @annonce = Annonce.new(annonce_params)
 
+    if params[:photo].present?
+      params[;photo].each do |file|
+        @annonce.photo.attach(file)
+      end
+    end
+
+    @annonce.utilisateur = current_user
+
     respond_to do |format|
       if @annonce.save
         format.html { redirect_to annonce_url(@annonce), notice: "Annonce was successfully created." }
@@ -66,6 +74,6 @@ class AnnoncesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def annonce_params
-      params.fetch(:annonce, {})
+      params.permit(:titre, :description, :adresse, :sous_categorie, :photo)
     end
 end
