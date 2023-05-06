@@ -1,0 +1,20 @@
+<svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+    aria-labelledby="TshirtTitleID"
+    style="fill: rgb(46, 201, 102); stroke: rgb(46, 201, 102); stroke-width: 0;">
+    <title id="TshirtTitleID">Tshirt Icon</title>
+    <g clip-path="url(#clip0_79_323)">
+        <g clip-path="url(#clip1_79_323)">
+            <path fill-rule="evenodd"
+                d="M19.792 23a1 1 0 01-1 1H6.208a1 1 0 01-1-1V9.587A.963.963 0 003.8 8.733a.963.963 0 01-1.173-.225L.65 6.224a1 1 0 01.098-1.407l5.22-4.57A1 1 0 016.625 0h11.746a1 1 0 01.661.25l5.227 4.603a1 1 0 01.098 1.401l-1.98 2.311a.948.948 0 01-1.18.213.948.948 0 00-1.406.83V23zM8.745 2.16C8.456 1.594 8.932 1 9.568 1h5.872c.633 0 1.11.59.827 1.157C15.605 3.484 14.302 4.5 12.5 4.5c-1.79 0-3.089-1.036-3.755-2.34z"
+                clip-rule="evenodd"></path>
+        </g>
+    </g>
+    <defs>
+        <clipPath id="clip0_79_323">
+            <path fill="#fff" d="M0 0h24v24H0z"></path>
+        </clipPath>
+        <clipPath id="clip1_79_323">
+            <path fill="#fff" d="M0 0h25v24H0z"></path>
+        </clipPath>
+    </defs>
+</svg>
