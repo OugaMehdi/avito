@@ -38,6 +38,46 @@
 
 
 //Style for edit utilisateurs
+.reglage-container{
+    background-color: white;
+    padding-bottom: 150px;
+}
+
+.menu-bar{
+    width: 84%;
+    margin: auto;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.list-menu-bar{
+    display: flex;
+}
+
+.list-menu-bar a{
+    width: 175px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-bottom: 2px solid rgb(235, 235, 235);
+    color: rgb(102, 102, 102);
+    svg{
+        margin-right: 10px;
+    }
+}
+.list-menu-bar a:last-child{
+    width: 130px;
+}
+
+.list-menu-bar a:active{
+    color: rgb(46, 107, 255);
+    border-bottom: 2px solid rgb(46, 107, 255);
+}
+
+
+
 .container-reglage{
     width: 84%;
     margin: auto;
@@ -145,22 +185,22 @@
 }
 
 //toggle
-$toggle-background-color-on: dodgerblue;
-$toggle-background-color-off: darkgray;
-$toggle-control-color: white;
-$toggle-width: 40px;
-$toggle-height: 20px;
-$toggle-gutter: 5px;
+$toggle-background-color-on: rgb(234, 240, 255);
+$toggle-background-color-off: rgb(208, 208, 208);
+$toggle-width: 35px;
+$toggle-height: 15px;
+$toggle-gutter: -5px;
 $toggle-radius: 100%;
 $toggle-control-speed: .15s;
 $toggle-control-ease: ease-in;
 
 
-$toggle-radius: $toggle-height / 2;
-$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
+$toggle-radius: $toggle-height ;
+$toggle-control-size: $toggle-height;
 
 .toggle-control {
-    margin-top: 40px;
+    margin-top: 5px;
+    margin-right: 10px;
   display: block;
   position: relative;
   padding-left: $toggle-width;
@@ -181,14 +221,14 @@ $toggle-control-size: $toggle-height - ($toggle-gutter * 2);
     background-color: $toggle-background-color-on;
     
     &:after {
-      left: $toggle-width - $toggle-control-size - $toggle-gutter;
+      left: 18px;
     }
   }
 
   .control {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -5px;
     height: $toggle-height;
     width: $toggle-width;
     border-radius: $toggle-radius;
@@ -199,12 +239,13 @@ $toggle-control-size: $toggle-height - ($toggle-gutter * 2);
       content: "";
       position: absolute;
       left: $toggle-gutter;
-      top: $toggle-gutter;
-      width: $toggle-control-size;
-      height: $toggle-control-size;
+      top: -3px;
+      width: 22px;
+      height: 22px;
       border-radius: $toggle-radius;
-      background: $toggle-control-color;
+      background: rgb(46, 107, 255);
       transition: left $toggle-control-speed $toggle-control-ease;
     }
   }
 }
+
