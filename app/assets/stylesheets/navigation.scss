@@ -97,6 +97,10 @@
     margin: auto 1rem;
 }
 
+.navbar2 div a{
+    text-decoration: none;
+}
+
 
 .navbar2 div button:first-child{
     padding: 5px 10px;
@@ -110,7 +114,7 @@
     background-color: #f2f2f2;
 }
 
-.navbar2 div button:last-child{
+.navbar2 div a:last-child{
     background-color: #29a160;
     color: white;
     border-radius: 100px;
@@ -123,6 +127,6 @@
     }
 }
 
-.navbar2 div button:last-child:hover{
+.navbar2 div a:last-child:hover{
     background-color: #20804C;
 }

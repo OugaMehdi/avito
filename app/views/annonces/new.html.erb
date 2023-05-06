@@ -1,5 +1,118 @@
-<h1>New Annonce</h1>
+<main id="main-add-form">
 
-<%= render 'form', annonce: @annonce %>
+    <div id="form-container">
+        <div id="form-container form-container2">
+            <div id="form-container3">
+                <div id="left-form">
+                    <div id="left-form-form">
+                        <%= form_tag '/annpnces'  do%>
 
-<%= link_to 'Back', annonces_path %>
+                            <section>
+                                <p class="sc-1x0vz2r-0 iFA-DJF sc-1ftgks-0 ZogFP">Qu'annoncez-vous aujourd'hui ?</p>
+                                <p class="sc-1x0vz2r-0 iBHyoB sc-1ftgks-1 ihjXcZ">Grâce à ces informations les acheteurs peuvent trouver votre annonce plus facilement</p>
+                                <div id="categories">
+                                    <div>
+                                        <%= label_tag :categorie, "Catégorie", class:'categorie-label' %>
+
+                                        <%= select_tag :sous_categorie, options_from_collection_for_select(@sous_categories, 'id', 'nom_sous_categorie'), class:'categorie-dropdown'%>
+                                    </div>
+                                    <div></div>
+                                </div>
+                                
+                            </section>
+
+                            <section>
+                            <p class="sc-1x0vz2r-0 iFA-DJF sc-1ftgks-0 ZogFP">Votre Adresse</p>
+                            <p class="sc-1x0vz2r-0 iBHyoB sc-1ftgks-1 ihjXcZ">Adresse principale de l'annonce</p>
+                            <label for="adresse" class="sc-1t6bwmy-1 bTPdgy"><div width="35" height="35" class="sc-wdregf-0 eoKEZS"><div style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"><div style="box-sizing: border-box; display: block; max-width: 100%;"><img alt="" aria-hidden="true" role="presentation" src="	https://www.avito.ma/_next/image?url=https%3A%2F%2…ts.avito.ma%2Ficons%2Fsvg%2Faddress.svg&w=32&q=75" style="max-width: 100%; display: block; margin: 0px; border: none; padding: 0px;"></div><img alt="Adresse du bien" src="	https://www.avito.ma/_next/image?url=https%3A%2F%2…ts.avito.ma%2Ficons%2Fsvg%2Faddress.svg&w=32&q=75" decoding="async" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;" srcset="https://www.avito.ma/_next/image?url=https%3A%2F%2Fassets.avito.ma%2Ficons%2Fsvg%2Faddress.svg&w=32&q=75"></div></div>Adresse du bien</label>
+                            <%= text_field_tag :adresse, params[:adresse], required:true, class:'categorie-dropdown' %>
+                            </section>
+
+                            <section>
+                                <p class="sc-1x0vz2r-0 iFA-DJF sc-1ftgks-0 ZogFP">Vos coordonnées</p>
+                                <p class="sc-1x0vz2r-0 iBHyoB sc-1ftgks-1 ihjXcZ">Les acheteurs peuvent vous contacter directement sur votre numéro de téléphone.</p>
+                                <div class="sc-1baqrvp-0 sc-phien2-1 ffpWTv dntnru">
+                                    <div class="sc-1lz4h6h-0 gmaqSf sc-phien2-2 dNrtzu">
+                                        <div class="sc-1t6bwmy-0 gswIJF">
+                                            <label for="phone" class="sc-1t6bwmy-1 bTPdgy">
+                                                <div width="35" height="35" class="sc-wdregf-0 eoKEZS">
+                                                    <div style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;">
+                                                        <div style="box-sizing: border-box; display: block; max-width: 100%;">
+                                                            <img alt="" aria-hidden="true" role="presentation" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+" style="max-width: 100%; display: block; margin: 0px; border: none; padding: 0px;">
+                                                        </div>
+                                                        <img alt="Numéro de téléphone" src="/_next/image?url=https%3A%2F%2Fassets.avito.ma%2Ficons%2Fsvg%2Fadparam_phone.svg&amp;w=48&amp;q=75" decoding="async" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;" srcset="/_next/image?url=https%3A%2F%2Fassets.avito.ma%2Ficons%2Fsvg%2Fadparam_phone.svg&amp;w=32&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fassets.avito.ma%2Ficons%2Fsvg%2Fadparam_phone.svg&amp;w=48&amp;q=75 2x">
+                                                    </div>
+                                                </div>
+                                                <span>*</span>
+                                                Numéro de téléphone
+                                            </label>
+                                            <div tabindex="-1" class="sc-1i9i8oo-2 VoSSq"><div class="sc-1i9i8oo-3 eAIOkm">
+                                            </div>
+                                            <input disabled="" id="phone" name="phone" placeholder="Numéro de téléphone" type="text" class="sc-1i9i8oo-0 edBlHP" value="0666215862">
+                                            <div class="sc-1i9i8oo-3 fauTXP">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sc-1lz4h6h-0 gmaqSf sc-phien2-2 dNrtzu flex-end">
+                                    <label for="phone_hidden" class="sc-1k0t6c3-0 pvTfc">
+                                    <div width="35" height="35" class="sc-wdregf-0 eoKEZS">
+                                    <div style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;">
+                                    <div style="box-sizing: border-box; display: block; max-width: 100%;">
+                                    <img alt="" aria-hidden="true" role="presentation" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+" style="max-width: 100%; display: block; margin: 0px; border: none; padding: 0px;">
+                                </div><img alt="Masquer le numéro dans l'annonce" src="/_next/image?url=https%3A%2F%2Fassets.avito.ma%2Ficons%2Fsvg%2Fadparam_phonehidden.svg&amp;w=48&amp;q=75" decoding="async" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;" srcset="/_next/image?url=https%3A%2F%2Fassets.avito.ma%2Ficons%2Fsvg%2Fadparam_phonehidden.svg&amp;w=32&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fassets.avito.ma%2Ficons%2Fsvg%2Fadparam_phonehidden.svg&amp;w=48&amp;q=75 2x">
+                            </div>
+                        </div>
+                        <span class="sc-1k0t6c3-3 LUvog">Masquer le numéro dans l'annonce</span>
+                        <%= check_box_tag (:masquerTel) %>
+                        </label></div></div>
+                            </section>
+
+                            <section>
+                                <p class="sc-1x0vz2r-0 iFA-DJF sc-1ftgks-0 ZogFP">Information de l'annonce</p>
+                                <p class="sc-1x0vz2r-0 iBHyoB sc-1ftgks-1 ihjXcZ">Une annonce avec un prix exacte et une description bien détaillé a 10 fois plus de visibilité </p>
+                                <div>
+                                    <%= label_tag :prix, 'Prix', class:'form_label'%>
+                                    <%= number_field_tag :prix,params[:prix], class:'categorie-dropdown' %>
+                                </div>
+                                <div>
+                                    <%= label_tag :titre, 'Titre de l annonce', class:'form_label'%>
+                                    <%= text_field_tag :titre,params[:titre], class:'categorie-dropdown' %>
+                                </div>
+                                <div>
+                                    <%= label_tag :titre, 'Texte de l annonce', class:'form_label'%>
+                                    <%= text_area_tag :titre,params[:titre], class:'categorie-dropdown' %>
+                                </div>
+                            </section>
+
+                            <section>
+                                <p class="sc-1x0vz2r-0 iFA-DJF sc-1ftgks-0 ZogFP">Photos de l'annonce</p>
+                                <div>
+                                    <%= file_field :photo, params[:photo], class:''%>
+                                </div>
+
+                                <div class='notice'>
+                                    <%= image_tag('svg/warning.svg', class:'warning-icon')%>
+                                    <div >
+                                        <span>Réorganisez les photos pour modifier la couverture</span>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                            <section>
+                                <button class='submit-button'>Submit</button>
+                            </section>
+
+                        <%end%>
+                    </div>
+                </div>
+                <div id="right-form">
+                    <div class="sc-ilbl05-0 cezFWO"><svg class="av-icon sc-ilbl05-1 bAnbRL" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="CaretLeftTitleID" style="fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255); stroke-width: 0;"><title id="CaretLeftTitleID">CaretLeft Icon</title><path fill-rule="evenodd" d="M17 0L7.817 9.879c-1.09 1.171-1.09 3.07 0 4.242L17 24V0z" clip-rule="evenodd"></path></svg><div class="sc-ilbl05-2 fgehMV"><div class="sc-ilbl05-3 cgvQXh"><div width="32" height="32" class="sc-wdregf-0 hmXtPr"><svg class="av-icon sc-ilbl05-4 ieMrUe" height="19" width="19" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="BulbTitleID" style="fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255); stroke-width: 0;"><title id="BulbTitleID">Bulb Icon</title><path d="M16.392 4.308A6.16 6.16 0 0012 2.5a6.181 6.181 0 00-6.195 6.196c0 1.805.692 3.494 1.897 4.633l.169.158c.697.652 1.651 1.545 1.651 2.334v.929a.62.62 0 00.62.62h.929a.31.31 0 00.31-.31v-4.538a.31.31 0 00-.199-.289 5.063 5.063 0 01-1.013-.556.618.618 0 11.72-1.006c.286.202.838.503 1.111.503.274 0 .825-.301 1.113-.503a.62.62 0 01.719 1.006 5.064 5.064 0 01-1.013.555.31.31 0 00-.2.29v4.538a.31.31 0 00.31.31h.93a.62.62 0 00.62-.62v-.93c0-.77.943-1.662 1.632-2.314l.19-.18c1.24-1.184 1.895-2.787 1.895-4.63a6.163 6.163 0 00-1.804-4.388zM13.86 18.196h-3.717a.62.62 0 000 1.239h3.717a.62.62 0 000-1.24zm-.622 2.064H10.76a.62.62 0 100 1.24h2.478a.62.62 0 100-1.24z"></path></svg></div><span class="sc-1x0vz2r-0 hNVBuL sc-ilbl05-5 kLbKmz">Comment définir mon annonce</span></div><button class="sc-w5ky4o-0 cJcvJn sc-ilbl05-6 lncGPs" type="button"><svg class="av-icon" height="19" width="19" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="CloseTitleID" style="fill: rgb(17, 37, 62); stroke: rgb(17, 37, 62); stroke-width: 0;"><title id="CloseTitleID">Close Icon</title><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></button></div><div class="sc-17eawzi-0 kYxGvK sc-ilbl05-8 dXvUdh" color="sea_dark"><svg class="av-icon sc-17eawzi-1 ebbnFU" height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="ErrorOutlineTitleID" style="fill: rgb(36, 85, 204); stroke: rgb(36, 85, 204); stroke-width: 0;"><title id="ErrorOutlineTitleID">ErrorOutline Icon</title><path d="M11 15h2v2h-2v-2zm0-8h2v6h-2V7zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path></svg><div class="sc-17eawzi-3 eIwwLU"><span class="sc-17eawzi-2 fnKVIK"><ul class="sc-ilbl05-11 gRnrIf"><li>Choisir la bonne catégorie lors de l'insertion d'une annonce peut aider à augmenter la visibilité, la pertinence et l'efficacité, et éviter tout potentiel refus.</li><li>Il est important d'inclure une adresse postale claire et précise pour que les clients potentiels puissent facilement vous trouver.</li><li>Assurez-vous d'inclure un numéro de téléphone auquel les clients potentiels peuvent vous joindre</li><li>Gardez vos coordonnées à jour.</li></ul></span></div></div><a class="sc-1cf7u6r-0 kfrvnK sc-ilbl05-9 bCRGKN" href="https://aide.avito.ma/regles-de-publication-dannonce/" target="_blank" rel="noopener noreferer">Termes et conditions d’annonce</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>

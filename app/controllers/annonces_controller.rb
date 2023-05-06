@@ -13,6 +13,7 @@ class AnnoncesController < ApplicationController
   # GET /annonces/new
   def new
     @annonce = Annonce.new
+    @sous_categories = SousCategorie.all
   end
 
   # GET /annonces/1/edit
