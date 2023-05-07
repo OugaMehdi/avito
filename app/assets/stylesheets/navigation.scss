@@ -115,12 +115,10 @@
 }
 
 
-//.navbar2 div a:last-child{
 
 .btn-annonce{
 
     background-color: #29a160;
-    color: white;
     border-radius: 100px;
     padding: 8px 30px;
     display: flex;
@@ -129,10 +127,12 @@
         margin-right: 5px;
         margin-bottom: 1px;
     }
+    a{
+        color: white;
+    }
 }
 
 
-//.navbar2 div a:last-child:hover{
 
 .btn-annonce:hover{
     background-color: #20804C;
