@@ -1,0 +1,7 @@
+<svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+    aria-labelledby="PourLaMaisonEtJardinTitleID"
+    style="fill: rgb(46, 201, 102); stroke: rgb(46, 201, 102); stroke-width: 0;">
+    <title id="PourLaMaisonEtJardinTitleID">PourLaMaisonEtJardin Icon</title>
+    <path
+        d="M16.048.895l.968 9.61c.05.494-.295.895-.771.895H5.91c-.475 0-.82-.4-.77-.895l.967-9.61C6.158.401 6.584 0 7.059 0h8.038c.475 0 .9.4.95.895zM17.967 14.1c0 .497-.385.9-.861.9H5.05c-.475 0-.86-.403-.86-.9v-1.2c0-.497.385-.9.86-.9h12.056c.476 0 .861.403.861.9v1.2zm.135 9.196l-1.3-7.696h-1.165l.81 4.8H5.71l.81-4.8H5.354l-1.3 7.696a.598.598 0 00.466.695c.034.006.068.01.1.01a.582.582 0 00.566-.497l.32-1.904H16.65l.321 1.904a.582.582 0 00.666.487.598.598 0 00.465-.695z"></path>
+</svg>
