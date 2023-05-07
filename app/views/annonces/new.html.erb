@@ -64,7 +64,7 @@
                             </div>
                         </div>
                         <span class="sc-1k0t6c3-3 LUvog">Masquer le numéro dans l'annonce</span>
-                        <%= check_box_tag (:masquerTel) %>
+                        <%= check_box_tag :masquerTel %>
                         </label></div></div>
                             </section>
 
@@ -76,12 +76,12 @@
                                     <%= number_field_tag :prix,params[:prix], class:'categorie-dropdown' %>
                                 </div>
                                 <div>
-                                    <%= label_tag :titre, 'Titre de l annonce', class:'form_label'%>
+                                    <%= label_tag :titre, "Titre de l'annonce", class:'form_label'%>
                                     <%= text_field_tag :titre,params[:titre], class:'categorie-dropdown' %>
                                 </div>
                                 <div>
-                                    <%= label_tag :titre, 'Texte de l annonce', class:'form_label'%>
-                                    <%= text_area_tag :titre,params[:titre], class:'categorie-dropdown' %>
+                                    <%= label_tag :description, "Texte de l'annonce", class:'form_label'%>
+                                    <%= text_area_tag :description,params[:description], class:'categorie-dropdown' %>
                                 </div>
                             </section>
 

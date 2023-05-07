@@ -91,3 +91,14 @@
         </form>
     </div>
 </div>
+
+<div>
+<% @annonces.each do |annonce| %>
+    
+
+ <%= link_to image_tag(url_for(annonce.photo), class:'group-hover:opacity-60 transition duration-500 h-64 w-80'), annonce%>  
+
+<%= annonce.titre %>
+    
+<% end %>
+</div>
