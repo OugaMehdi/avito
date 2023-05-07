@@ -23,7 +23,7 @@ class AnnoncesController < ApplicationController
   # POST /annonces or /annonces.json
   def create
     # @annonce = Annonce.new(annonce_params)
-    @annonce = Annonce.new(adresse: params[:adresse], masquerTel: params[:masquerTel], titre: params[:titre], description: params[:description], sous_categorie_id: params[:sous_categorie_id])
+    @annonce = Annonce.new(adresse: params[:adresse], prix: params[:prix], masquerTel: params[:masquerTel], titre: params[:titre], description: params[:description], sous_categorie_id: params[:sous_categorie_id])
     @annonce.utilisateur = utilisateur_courant
     if params[:photo].present?
       params[:photo].each do |file|
