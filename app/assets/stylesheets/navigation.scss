@@ -97,6 +97,10 @@
     margin: auto 1rem;
 }
 
+.navbar2 div a{
+    text-decoration: none;
+}
+
 
 .btn-traduction{
     padding: 5px 10px;
@@ -110,7 +114,11 @@
     background-color: #f2f2f2;
 }
 
+
+//.navbar2 div a:last-child{
+
 .btn-annonce{
+
     background-color: #29a160;
     color: white;
     border-radius: 100px;
@@ -122,6 +130,9 @@
         margin-bottom: 1px;
     }
 }
+
+
+//.navbar2 div a:last-child:hover{
 
 .btn-annonce:hover{
     background-color: #20804C;
