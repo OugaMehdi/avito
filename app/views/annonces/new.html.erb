@@ -5,8 +5,8 @@
             <div id="form-container3">
                 <div id="left-form">
                     <div id="left-form-form">
-                        <%= form_tag '/annpnces'  do%>
-                        
+                        <%= form_tag '/annonces'  do%>
+
                             <section>
                                 <p class="sc-1x0vz2r-0 iFA-DJF sc-1ftgks-0 ZogFP">Qu'annoncez-vous aujourd'hui ?</p>
                                 <p class="sc-1x0vz2r-0 iBHyoB sc-1ftgks-1 ihjXcZ">Grâce à ces informations les acheteurs peuvent trouver votre annonce plus facilement</p>
@@ -14,7 +14,7 @@
                                     <div>
                                         <%= label_tag :categorie, "Catégorie", class:'categorie-label' %>
 
-                                        <%= select_tag :sous_categorie, options_from_collection_for_select(@sous_categories, 'id', 'nom_sous_categorie'), class:'categorie-dropdown'%>
+                                        <%= select_tag :sous_categorie_id, options_from_collection_for_select(@sous_categories, 'id', 'nom_sous_categorie'), class:'categorie-dropdown'%>
                                     </div>
                                     <div></div>
                                 </div>
