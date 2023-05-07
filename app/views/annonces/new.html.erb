@@ -5,7 +5,7 @@
             <div id="form-container3">
                 <div id="left-form">
                     <div id="left-form-form">
-                        <%= form_tag '/annonces'  do%>
+                        <%= form_tag '/annonces', multipart: true  do%>
 
                             <section>
                                 <p class="sc-1x0vz2r-0 iFA-DJF sc-1ftgks-0 ZogFP">Qu'annoncez-vous aujourd'hui ?</p>
@@ -88,7 +88,7 @@
                             <section>
                                 <p class="sc-1x0vz2r-0 iFA-DJF sc-1ftgks-0 ZogFP">Photos de l'annonce</p>
                                 <div>
-                                    <%= file_field :photo, params[:photo], class:''%>
+                                    <%= file_field :photo, params[:photo], class:'form-control', multiple: false %>
                                 </div>
 
                                 <div class='notice'>
