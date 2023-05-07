@@ -21,7 +21,12 @@ Rails.application.routes.draw do
 
   get '/annonces' => 'annonces#new'
 
+
   get 'annonce' => 'annonces#show' 
+
+  get '/search', to:'pages#home'
+  post '/search', to:'pages#home'
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
