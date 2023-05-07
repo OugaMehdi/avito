@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status_commande: MyString
+  utilisateur: one
+  annonce: one
+
+two:
+  status_commande: MyString
+  utilisateur: two
+  annonce: two

@@ -1,0 +1,251 @@
+// Place all the styles related to the Utilisateurs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.register-form{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 60px auto;
+}
+
+.register-info{
+    border-radius: 10px;
+    background-color: rgb(234, 240, 255);
+    color: rgb(36, 85, 204);
+    padding: 20px 25px;
+    margin-top: 15px;
+    display: flex;
+}
+
+.register-info img{
+    display: flex;
+    align-self: baseline;
+    margin-right: 15px;
+}
+
+.register-form label::before{
+    content: "* ";
+    color: red;
+    font-size: 18px;
+}
+
+.register-form select{
+    height: 50px;
+    width: 100%;
+}
+
+
+
+//Style for edit utilisateurs
+.reglage-container{
+    background-color: white;
+    padding-bottom: 150px;
+}
+
+.menu-bar{
+    width: 84%;
+    margin: auto;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.list-menu-bar{
+    display: flex;
+}
+
+.list-menu-bar a{
+    width: 175px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-bottom: 2px solid rgb(235, 235, 235);
+    color: rgb(102, 102, 102);
+    svg{
+        margin-right: 10px;
+    }
+}
+.list-menu-bar a:last-child{
+    width: 130px;
+}
+
+.list-menu-bar a:active{
+    color: rgb(46, 107, 255);
+    border-bottom: 2px solid rgb(46, 107, 255);
+}
+
+
+
+.container-reglage{
+    width: 84%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#options{
+    display: flex;
+    flex-direction: column;
+    width: 284px;
+}
+
+#options button:hover{
+    background-color: rgba(208,208,208,255);
+}
+
+#btn-info, #btn-mdp, #btn-notif{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 8px;
+    background-color: rgb(242, 242, 242);
+    border: none;
+    height: 48px;
+    color: rgb(102, 102, 102);
+    letter-spacing: 0.15px;
+}
+
+#btn-info{
+    color: rgb(46, 107, 255);
+    
+}
+
+#dropdown-mdp, #dropdown-notif{
+    rotate: -90deg;
+}
+
+#dropdown-info {
+    rotate: -90deg;
+    fill: rgb(46, 107, 255);
+}
+
+.edit-form{
+    margin-top: 12px;
+    width: 67%;
+}
+
+.edit-form label:not(.toggle-control):before{
+    content: "* ";
+    color: red;
+    font-size: 18px;
+}
+
+.edit-form input:not(#telCheck, .sauvegarder-btn), .edit-form select{
+    border-radius: 4px;
+    height: 53px;
+    width: 95%;
+    color: black;
+}
+
+.edit-form input:not(#readonly-input input, #telCheck, .sauvegarder-btn):hover{
+    border-color: rgba(0, 0, 0, 0.4);
+}
+
+#telCheck {
+    width: 16px;
+    height: 16px;
+    margin-top: 5px;
+}
+
+#readonly-input{
+    input{
+        cursor: no-drop;
+        border-color: none;
+        background-color: rgba(208,208,208,255);
+    }
+    img{
+        margin-top: 1px;
+    }
+}
+
+.email-notif{
+    font-size: 13px;
+    width: 90%;
+    border-radius: 4px;
+    padding: 24px 16px 12px;
+    border-left: 4px solid rgb(46, 107, 255);
+    background-color: rgb(234, 240, 255);
+    color: rgb(36, 85, 204);
+    p{
+        font-weight: 500;
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+}
+
+.sauvegarder-btn{
+    width: 25%;
+    height: 42px;
+    margin-left: auto;
+    margin-right: 5%;
+}
+
+//toggle
+$toggle-background-color-on: rgb(234, 240, 255);
+$toggle-background-color-off: rgb(208, 208, 208);
+$toggle-width: 35px;
+$toggle-height: 15px;
+$toggle-gutter: -5px;
+$toggle-radius: 100%;
+$toggle-control-speed: .15s;
+$toggle-control-ease: ease-in;
+
+
+$toggle-radius: $toggle-height ;
+$toggle-control-size: $toggle-height;
+
+.toggle-control {
+    margin-top: 5px;
+    margin-right: 10px;
+  display: block;
+  position: relative;
+  padding-left: $toggle-width;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input:checked ~ .control {
+    background-color: $toggle-background-color-on;
+    
+    &:after {
+      left: 18px;
+    }
+  }
+
+  .control {
+    position: absolute;
+    top: 0;
+    left: -5px;
+    height: $toggle-height;
+    width: $toggle-width;
+    border-radius: $toggle-radius;
+    background-color: $toggle-background-color-off;
+    transition: background-color $toggle-control-speed $toggle-control-ease;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: $toggle-gutter;
+      top: -3px;
+      width: 22px;
+      height: 22px;
+      border-radius: $toggle-radius;
+      background: rgb(46, 107, 255);
+      transition: left $toggle-control-speed $toggle-control-ease;
+    }
+  }
+}
+

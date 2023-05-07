@@ -73,7 +73,7 @@
     margin: auto;
 }
 
-.navbar2 div{
+.button-group{
     margin-left: auto;
     width: max-content;
     display: flex;
@@ -91,14 +91,14 @@
     color: rgb(74, 74, 74);
 }
 
-.navbar2 div button{
+.btn-annonce,.btn-traduction{
     background: transparent;
     border: 0;
     margin: auto 1rem;
 }
 
 
-.navbar2 div button:first-child{
+.btn-traduction{
     padding: 5px 10px;
     display: inline-flex;
     align-items: end;
@@ -106,11 +106,11 @@
         margin-left: 5px;
     }
 }
-.navbar2 div button:first-child:hover{
+.btn-traduction:hover{
     background-color: #f2f2f2;
 }
 
-.navbar2 div button:last-child{
+.btn-annonce{
     background-color: #29a160;
     color: white;
     border-radius: 100px;
@@ -123,6 +123,64 @@
     }
 }
 
-.navbar2 div button:last-child:hover{
+.btn-annonce:hover{
     background-color: #20804C;
+}
+
+.profile{
+    margin-top: 4px;
+}
+.profile-btn{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 188px;
+    height: 32px;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: rgb(74, 74, 74);
+    border: 0;
+}
+.profile-btn div{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+.dropdown-icon{
+    position: absolute;
+    right: 0;
+}
+
+
+.profile-btn:hover{
+    color: rgb(74, 74, 74);
+    background-color: #f2f2f2;
+}
+
+.profile-btn:focus{
+    background-color: rgb(234, 240, 255);
+    color: rgb(36, 85, 204);
+}
+
+.dropdown-menu{
+    margin-top: 8px;
+    width: 188px;
+}
+
+.dropdown-item a{
+    text-decoration: none;
+    color: rgb(74, 74, 74);
+    margin-left: 5px;
+}
+.dropdown-item{
+    display: flex;
+    padding-left: 15px;
+    font-size: 14px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    img{
+        margin-right: 5px;
+    }
 }

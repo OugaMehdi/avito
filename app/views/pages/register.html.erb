@@ -1,4 +1,6 @@
-<form class="register-form">
+<%
+=begin%>
+ <%= form_for(@utilisateur, :html => {class: "register-form", role: "form"}) do |f| %>
 <div class="form-container">
     <h5 class="font-weight-bold">Créer un compte Avito.ma</h5>
     <div role='button' class="d-flex justify-content-center mt-4">
@@ -26,42 +28,40 @@
       <label for="inputEmail">Nom</label>
       <div class="email-input">
           <%= image_tag('svg/user-icon.svg') %>
-          <input type="nom" class="form-control" id="inputNom" placeholder="Votre nom">
+          <%= f.text_field :nom , class: "form-control", placeholder: "Votre nom" %>
       </div>
     </div>
     <div class="form-group">
       <label for="inputEmail">E-mail</label>
       <div class="email-input">
           <%= image_tag('svg/email.svg') %>
-          <input type="email" class="form-control" id="inputEmail" placeholder="E-mail">
+          <%= f.email_field :email, class: "form-control", placeholder: "E-mail" %>
       </div>
     </div>
     <div class="form-group">
       <label for="inputTel">Téléphone</label>
       <div class="email-input">
           <%= image_tag('svg/tel.svg') %>
-          <input type="tel" class="form-control" id="inputTel" placeholder="06XXXXXXXX">
+          <%= f.email_field :tel , class: "form-control" , placeholder: "06XXXXXXXX" %>
       </div>
     </div>
     <div class="form-group">
       <label for="inputPassword">Mot de passe</label>
       <div class="password-input">
           <%= image_tag('svg/password.svg') %>
-          <input type="password" class="form-control" id="inputPassword" placeholder="Choisissez un mot de passe">
+          <%= f.password_field :password , class: "form-control" , placeholder: "Choisissez un mot de passe" %>
       </div>
     </div>
     <div class="form-group">
       <label for="inputPasswordConfirm">Confirmer le mot de passe</label>
       <div class="password-input">
           <%= image_tag('svg/password.svg') %>
-          <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="Confirmer le mot de passe">
+          <%= f.password_field :password_confirmation , class: "form-control" , placeholder: "Confirmer le mot de passe" %>
       </div>
     </div>
     <div class="form-group">
         <label>Ville</label>
-        <select class="form-control">
-            <option value="" disabled selected>Selectionner une ville</option>
-        </select>
+        <%= f.select :ville_id , Ville.pluck(:nom_ville) ,class: "form-control" %>
     </div>
     <div class="form-check d-flex">
         <input type="checkbox" class="form-check-input" id="checkTerms">
@@ -70,7 +70,9 @@
             Et je donne mon accord au traitement <a href="#">de mes données personnelles.</a>
         </small>
     </div>
-    <button type="submit" class="btn btn-primary w-100 mt-4 text-uppercase">créer un compte</button>
+    <%= f.submit "créer un compte" , class: "btn btn-primary w-100 mt-4 text-uppercase" %>
     <p class="mt-4 text-center" >Vous avez déjà un compte? <%= link_to "Se connecter", login_path %></p>
 </div>
-</form>
+<% end %> 
+<%
+=end%>
