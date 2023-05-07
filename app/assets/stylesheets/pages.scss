@@ -1,3 +1,189 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+//home page scss
+#liste-annonces{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#gauche {
+    width: 68%;
+    height: fit-content;
+
+}
+
+#droite{
+    width: 25%;
+}
+
+#vue{
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    button:not(#sauvegarde){
+        margin-left: 10px;
+        border: 0;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 11px;
+        margin-top: 2px;
+        padding: 5px 10px;
+    }
+}
+
+
+#vue button:not(#sauvegarde):hover{
+    background-color: rgb(248, 248, 248);
+    border-radius: 8px;
+
+}
+
+#sauvegarde{
+    margin-left: auto;
+    border: none;
+    background-color: white;
+    color: #F5A623;
+    padding: 10px 13px;
+    border-radius: 5px;
+    span{
+        margin-top: 4px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+#sauvegarde:hover{
+    background-color: #f5a52318;
+}
+
+.annonce{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.annonce:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.annonce-image img{
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.annonce-info {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.annonce-info button {
+    background: white;
+    border: none;
+}
+
+.annonce-info div span{
+    color: rgb(46, 107, 255);
+    font-size: 24px;
+}
+
+.annonce-details{
+    font-size: 14px;
+    color: rgb(155, 155, 155);
+}
+
+.line{
+    margin: 8px auto;
+    border-top: 0.5px solid rgba(206, 205, 205, 0.575);
+}
+
+.store{
+    margin-left: auto;
+    margin-right: 5px;
+    background-color: rgb(254, 234, 213);
+    padding: 0px 6px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#premium{
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#premium-child{
+    height: 50px;
+    width: 70%;
+    margin: auto;
+    color: rgb(252, 148, 45);
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    border-bottom: 2px solid rgb(252, 148, 45);
+    svg{
+        margin-right: 10px;
+    }
+}
+
+.premium-carte{
+    margin-top: 15px;
+    width: 100%;
+    height: 260px;
+    border-radius: 10px;
+    background-color: white;
+    
+}
+.premium-carte-img {
+    height: 180px;
+    img{
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        object-fit: cover;
+    }
+}
+.premium-carte-text{
+    margin: 10px;
+}
+
+.premium-carte-text-div1{
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5a52318;
+        padding: 0 10px;
+        font-size: 14px;
+        color: #F5A623;
+        border-radius: 10px;
+    }
+    span{
+        color: rgb(46, 107, 255);
+        font-size: 20px;
+    }
+    display: flex;
+    justify-content: space-between;
+}

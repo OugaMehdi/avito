@@ -1,6 +1,8 @@
 class Utilisateur < ApplicationRecord
 
     has_many :annonces
+    belongs_to :ville
+    
     attr_accessor :current_password, :new_password, :new_password_confirmation
 
     validates :nom, presence: true, length: { maximum: 50 }

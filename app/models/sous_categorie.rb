@@ -1,4 +1,4 @@
 class SousCategorie < ApplicationRecord
   belongs_to :categorie
-  belongs_to :annonce
+  has_many :annonce
 end

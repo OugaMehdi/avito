@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_07_143827) do
+ActiveRecord::Schema.define(version: 2023_05_07_195912) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2023_05_07_143827) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "utilisateur_id", null: false
     t.integer "sous_categorie_id", null: false
+    t.integer "prix"
     t.index ["sous_categorie_id"], name: "index_annonces_on_sous_categorie_id"
     t.index ["utilisateur_id"], name: "index_annonces_on_utilisateur_id"
   end

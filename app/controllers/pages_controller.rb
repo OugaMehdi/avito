@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def home
-    @annonces = Annonce.all
-    @utilisateur = utilisateur_courant 
+    @annonces = Annonce.includes(:sous_categorie, utilisateur: :ville).all
+    @utilisateur = utilisateur_courant
   end
 
   def login

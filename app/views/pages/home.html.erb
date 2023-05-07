@@ -1,4 +1,4 @@
-<div class="app-container">
+<div class="app-container mb-5">
     <div id="search-bar-container">
         <form id="search-form">
             <div id="search-items">
@@ -90,15 +90,103 @@
             </div>
         </form>
     </div>
+    <div id="liste-annonces">
+        <div id="gauche">
+            <div id="vue">
+                <span class="ml-2">Vue:</span>
+                <button class="d-flex display-column">
+                    <svg height="19" width="19" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="LayoutRowLineTitleID" style="fill: rgb(45, 45, 45); stroke: rgb(45, 45, 45); stroke-width: 0;"><title id="LayoutRowLineTitleID">LayoutRowLine Icon</title><path fill="none" d="M0 0h24v24H0z"></path><path d="M19 11V5H5v6h14zm0 2H5v6h14v-6zM4 3h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1z"></path></svg>
+                    <span>LISTE</span>
+                </button>
+                <button class="d-flex display-column">
+                    <svg height="19" width="19" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="LayoutGridLineTitleID" style="fill: rgb(45, 45, 45); stroke: rgb(45, 45, 45); stroke-width: 0;"><title id="LayoutGridLineTitleID">LayoutGridLine Icon</title><path fill="none" d="M0 0h24v24H0z"></path><path d="M21 3a1 1 0 011 1v16a1 1 0 01-1 1H3a1 1 0 01-1-1V4a1 1 0 011-1h18zM11 13H4v6h7v-6zm9 0h-7v6h7v-6zm-9-8H4v6h7V5zm9 0h-7v6h7V5z"></path></svg>
+                    <span>CARTES</span>
+                </button>
+                <button id="sauvegarde" >
+                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="StarTitleID" style="fill: currentcolor; stroke: currentcolor; stroke-width: 0;"><title id="StarTitleID">Star Icon</title><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928L12 18.26zm0-2.292l4.247 2.377-.949-4.773 3.573-3.305-4.833-.573L12 5.275l-2.038 4.42-4.833.572 3.573 3.305-.949 4.773L12 15.968z"></path></svg>
+                    <span class="ml-1">SAUVEGARDER LA RECHERCHE</span>
+                </button>
+            </div>
+            <span class="text-secondary">Toutes les catégories à vendre au Maroc</span>
+            <div class="mt-2">
+                <% @annonces.each do |a| %>
+                <div class="annonce">
+                    <div class="w-25 annonce-image " >
+                        <%= link_to image_tag(url_for(a.photo)), a %>  
+                    </div>
+                    <div class="w-75 annonce-info">
+                        <div>
+                            <div class="d-flex">
+                                <span><%= a.prix %></span>
+                                <button class="ml-auto">
+                                    <svg height="19" width="19" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="HeartOutlineTitleID" style="fill: rgb(74, 74, 74); stroke: rgb(74, 74, 74); stroke-width: 0;"><title id="HeartOutlineTitleID">HeartOutline Icon</title><path fill-rule="evenodd" d="M2.405 12.33c-1.231-3.824.407-7.833 4.078-9.015a6.562 6.562 0 015.25.541l.263.158.268-.159a6.571 6.571 0 014.982-.619l.266.08c3.673 1.182 5.317 5.192 4.082 9.03a12.42 12.42 0 01-2.977 4.736 34.695 34.695 0 01-5.995 4.665l-.23.143a.732.732 0 01-.762.006l-.245-.147a34.717 34.717 0 01-6.005-4.673 12.427 12.427 0 01-2.975-4.747zm9.194-6.363l-.185-.132a4.784 4.784 0 00-4.162-.606c-2.664.856-3.872 3.808-2.94 6.696a10.232 10.232 0 002.448 3.899A31.118 31.118 0 0012.135 20L12 19.916l.438-.275a31.11 31.11 0 004.304-3.342l.495-.47a10.226 10.226 0 002.45-3.889c.934-2.9-.279-5.854-2.944-6.71a4.793 4.793 0 00-4.336.728.686.686 0 01-.81.009z" clip-rule="evenodd"></path></svg>
+                                </button>
+                            </div>
+                            <p><%= a.titre %></p>
+                        </div>
+                        <div class="annonce-details">
+                            <small ><%= a.sous_categorie.nom_sous_categorie %></small>
+                            <div class="line"></div>
+                            <div class="d-flex">
+                                <div class="mr-3">
+                                    <svg height="14" width="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="TimeFillTitleID" style="fill: rgb(155, 155, 155); stroke: rgb(155, 155, 155); stroke-width: 0;"><title id="TimeFillTitleID">TimeFill Icon</title><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm1-10V7h-2v7h6v-2h-4z"></path></svg>
+                                    <small >il y a <%= time_ago_in_words(a.created_at) %></small>
+                                </div>
+                                <div>
+                                    <svg height="14" width="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MapPinFillTitleID" style="fill: rgb(155, 155, 155); stroke: rgb(155, 155, 155); stroke-width: 0;"><title id="MapPinFillTitleID">MapPinFill Icon</title><path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1112.728 0zM12 15a4 4 0 100-8 4 4 0 000 8zm0-2a2 2 0 110-4 2 2 0 010 4z"></path></svg>
+                                    <small ><%= a.utilisateur.ville.nom_ville %></small>
+                                </div>
+                                <div class="store">
+                                    <svg height="16" width="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="Store2FillTitleID" style="fill: rgb(252, 148, 45); stroke: rgb(252, 148, 45); stroke-width: 0;"><title id="Store2FillTitleID">isDelivery</title><path d="M22 20v2H2v-2h1v-6.758A4.496 4.496 0 011 9.5c0-.827.224-1.624.633-2.303L4.345 2.5a1 1 0 01.866-.5H18.79a1 1 0 01.866.5l2.702 4.682A4.496 4.496 0 0121 13.242V20h1zM5.789 4L3.356 8.213a2.5 2.5 0 004.466 2.216c.335-.837 1.52-.837 1.856 0a2.5 2.5 0 004.644 0c.335-.837 1.52-.837 1.856 0a2.5 2.5 0 104.457-2.232L18.21 4H5.79z"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+        <div id="droite">
+            <div id="premium">
+                <div id="premium-child">
+                    <svg height="19" width="19" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="PriceTag3FillTitleID" style="fill: currentcolor; stroke: currentcolor; stroke-width: 0;"><title id="PriceTag3FillTitleID">PriceTag3Fill Icon</title><path fill="none" d="M0 0h24v24H0z"></path><path d="M10.9 2.1l9.899 1.415 1.414 9.9-9.192 9.192a1 1 0 01-1.414 0l-9.9-9.9a1 1 0 010-1.414L10.9 2.1zm2.828 8.486a2 2 0 102.828-2.829 2 2 0 00-2.828 2.829z"></path></svg>
+                    <span>ANNONCES PREMIUM</span>
+                </div>
+            </div>
+            <div class ="premium-carte">
+                <div class ="premium-carte-img">
+                    <img src="https://content.avito.ma/images/10/10077246760.jpg" alt="Magasin a vendre " />
+                </div>
+                <div class ="premium-carte-text">
+                    <div class="premium-carte-text-div1">
+                        <span>1 050 000 DH</span>
+                        <div>
+                            <svg height="14" width="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="PriceTag3FillTitleID" style="fill: rgb(252, 148, 45); stroke: rgb(252, 148, 45); stroke-width: 0;"><title id="PriceTag3FillTitleID">PriceTag3Fill Icon</title><path fill="none" d="M0 0h24v24H0z"></path><path d="M10.9 2.1l9.899 1.415 1.414 9.9-9.192 9.192a1 1 0 01-1.414 0l-9.9-9.9a1 1 0 010-1.414L10.9 2.1zm2.828 8.486a2 2 0 102.828-2.829 2 2 0 00-2.828 2.829z"></path></svg>
+                            <small class="ml-2">PREMIUM</small>
+                        </div>
+                    </div>
+                    <p>Magasin a vendre</p>
+                </div>
+            </div>
+            <div class ="premium-carte">
+                <div class ="premium-carte-img">
+                    <img src="https://content.avito.ma/images/10/10094697923.jpg" alt="Serveur Dell PowerEdge R620 E5-2640 ">
+                </div>
+                <div class ="premium-carte-text">
+                    <div class="premium-carte-text-div1">
+                        <span>5 480 DH</span>
+                        <div>
+                            <svg height="14" width="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="PriceTag3FillTitleID" style="fill: rgb(252, 148, 45); stroke: rgb(252, 148, 45); stroke-width: 0;"><title id="PriceTag3FillTitleID">PriceTag3Fill Icon</title><path fill="none" d="M0 0h24v24H0z"></path><path d="M10.9 2.1l9.899 1.415 1.414 9.9-9.192 9.192a1 1 0 01-1.414 0l-9.9-9.9a1 1 0 010-1.414L10.9 2.1zm2.828 8.486a2 2 0 102.828-2.829 2 2 0 00-2.828 2.829z"></path></svg>
+                            <small class="ml-2">PREMIUM</small>
+                        </div>
+                    </div>
+                    <p>Serveur Dell PowerEdge R620 E5-2640</p>
+                </div>
+            </div>
+        </div>    
+    </div>
 </div>
 
-<div>
-<% @annonces.each do |annonce| %>
-    
 
- <%= link_to image_tag(url_for(annonce.photo), class:'group-hover:opacity-60 transition duration-500 h-64 w-80'), annonce%>  
 
-<%= annonce.titre %>
-    
-<% end %>
-</div>
+
