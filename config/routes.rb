@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :commandes
   resources :villes
   resources :utilisateurs
-  resources :annonces, only: [:create , :destroy]
+  resources :annonces, only: [:create , :destroy, :show]
 
   get 'villes/new'
   root 'pages#home'
@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   patch 'editPassword' => 'utilisateurs#update_password'
 
   get '/annonces' => 'annonces#new'
+
+  get 'annonce' => 'annonces#show' 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
