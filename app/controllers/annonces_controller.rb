@@ -23,9 +23,10 @@ class AnnoncesController < ApplicationController
   # POST /annonces or /annonces.json
   def create
     @annonce = Annonce.new(annonce_params)
+    @annonce.user = @utilisateur_courant
 
     if params[:photo].present?
-      params[;photo].each do |file|
+      params[:photo].each do |file|
         @annonce.photo.attach(file)
       end
     end
@@ -74,6 +75,6 @@ class AnnoncesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def annonce_params
-      params.permit(:titre, :description, :adresse, :sous_categorie, :photo)
+      params.permit(:titre, :description, :adresse, :sous_categorie_id, :photo)
     end
 end
