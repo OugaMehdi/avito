@@ -1,13 +1,14 @@
 <div class="app-container">
     <div id="search-bar-container">
-        <form id="search-form">
+    <div id="search-form">
+        <%= form_tag search_path method: :get do |f| %>
             <div id="search-items">
                 <div id="search-options">
                     <div class="search-bar-container1">
                         <div id="search-bar-container2">
                             <div id="input-container" tabindex="-1">
                                 <div id="icon-container"><%= image_tag("svg/search-bar-icon.svg") %></div>
-                                <input type="text" autocomplete="off" name="searchbar" placeholder="Que recherchez-vous?" class="searchbar" value="">
+                                <%= text_field_tag :search, params[:search], class:'searchbar', placeholder:'Que recherchez-vous?' %>
                                 <div id="input-seperator"></div>
                             </div>
                             
@@ -15,21 +16,137 @@
                     </div>
                     <div class="search-bar-container1">
                         <div>
-                            <button class="category-dropdown-container" type="button">
+                            <button class="category-dropdown-container dropdown-toggle" type="button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                 <%= image_tag("svg/category-dropdown-icon.svg") %>
                                 <span id="category-dropdown-text">Choisissez une catégorie</span>
                                 <%= image_tag("svg/category-dropdown-button.svg") %>
                             </button>
+                            <div class="dropdown-menu" style="width:100%;" aria-labelledby="dropdownMenuButton">
+                                    <div style="padding: 24px 18px 24px 24px;">
+                                        <div class="dropdown-menu-items">
+                                            <div class="dropdown-menu-item">
+                                                <li class="category-dropdown-item1">
+                                                    <%= image_tag("svg/category-dropdown-icon2.svg", class:'category-dropdown-icon2')%>
+                                                    <span>Toutes les catégories</span>
+                                                    <%= image_tag("svg/category-dropdown-icon3.svg")%>
+                                                </li>
+                                                <li style="margin-top:16px;" class="category-main">
+                                                    <%= image_tag("svg/informatique-et-multimedia.svg", class:'category-icon')%>
+                                                    <span class="inf">INFORMATIQUE ET MULTIMEDIA</span>
+                                                </li>
+                                                <% @inf.sous_categories.each do |souscat| %>
+                                                    <li class="sous-categorie-item">
+                                                    <%= button_tag souscat.nom_sous_categorie, name: :sous_categorie, value: souscat.id, class:'souscatitem' %>
+                                                    </li>
+                                                <%end%>
+                                                <li style="margin-top:16px;" class="category-main">
+                                                    <%= image_tag("svg/habillement-et-bien-etre.svg", class:'category-icon')%>
+                                                    <span class="inf">HABILLEMENT ET BIEN ETRE</span>
+                                                </li>
+                                                <% @hab.sous_categories.each do |souscat| %>
+                                                    <li class="sous-categorie-item">
+                                                    <%= button_tag souscat.nom_sous_categorie, name: :sous_categorie, value: souscat.id, class:'souscatitem' %>
+                                                    </li>
+                                                <%end%>
+                                            </div>
+                                            <div class="dropdown-menu-item">
+                                                <li style="margin-top:16px;" class="category-main">
+                                                    <%= image_tag("svg/vehicules.svg", class:'category-icon')%>
+                                                    <span class="veh">HABILLEMENT ET BIEN ETRE</span>
+                                                </li>
+                                                <% @veh.sous_categories.each do |souscat| %>
+                                                    <li class="sous-categorie-item">
+                                                    <%= button_tag souscat.nom_sous_categorie, name: :sous_categorie, value: souscat.id, class:'souscatitem' %>
+                                                    </li>
+                                                <%end%>
+                                                <li style="margin-top:16px;" class="category-main">
+                                                    <%= image_tag("svg/loisirs-et-divertissement.svg", class:'category-icon')%>
+                                                    <span class="inf">LOISIRS ET DIVERTISSEMENT</span>
+                                                </li>
+                                                <% @loi.sous_categories.each do |souscat| %>
+                                                    <li class="sous-categorie-item">
+                                                    <%= button_tag souscat.nom_sous_categorie, name: :sous_categorie, value: souscat.id, class:'souscatitem' %>
+                                                    </li>
+                                                <%end%>
+                                            </div>
+                                            <div class="dropdown-menu-item">
+                                                <li style="margin-top:16px;" class="category-main">
+                                                    <%= image_tag("svg/immobilier.svg", class:'category-icon')%>
+                                                    <span class="imm">IMMOBILIER</span>
+                                                </li>
+                                                <% @imm.sous_categories.each do |souscat| %>
+                                                    <li class="sous-categorie-item">
+                                                    <%= button_tag souscat.nom_sous_categorie, name: :sous_categorie, value: souscat.id, class:'souscatitem' %>
+                                                    </li>
+                                                <%end%>
+                                                <li style="margin-top:16px;" class="category-main">
+                                                    <%= image_tag("svg/pour-la-maison-et-jarding.svg", class:'category-icon')%>
+                                                    <span class="inf">POUR LA MAISON ET JARDIN</span>
+                                                </li>
+                                                <% @pou.sous_categories.each do |souscat| %>
+                                                    <li class="sous-categorie-item">
+                                                    <%= button_tag souscat.nom_sous_categorie, name: :sous_categorie, value: souscat.id, class:'souscatitem' %>
+                                                    </li>
+                                                <%end%>
+                                                <li style="margin-top:16px;" class="category-main">
+                                                    <%= image_tag("svg/vente-en-douane.svg", class:'category-icon')%>
+                                                    <span class="ven">VENTE EN DOUANE</span>
+                                                </li>
+                                                <% @ven.sous_categories.each do |souscat| %>
+                                                    <li class="sous-categorie-item">
+                                                    <%= button_tag souscat.nom_sous_categorie, name: :sous_categorie, value: souscat.id, class:'souscatitem' %>
+                                                    </li>
+                                                <%end%>
+                                            </div>
+                                            <div class="dropdown-menu-item">
+                                                <li style="margin-top:16px;" class="category-main">
+                                                    <%= image_tag("svg/emploi-et-services.svg", class:'category-icon')%>
+                                                    <span class="emp">EMPLOI ET SERVICES</span>
+                                                </li>
+                                                <% @emp.sous_categories.each do |souscat| %>
+                                                    <li class="sous-categorie-item">
+                                                    <%= button_tag souscat.nom_sous_categorie, name: :sous_categorie, value: souscat.id, class:'souscatitem' %>
+                                                    </li>
+                                                <%end%>
+                                                <li style="margin-top:16px;" class="category-main">
+                                                    <%= image_tag("svg/emploi-et-services.svg", class:'category-icon')%>
+                                                    <span class="ent">ENTREPRISES</span>
+                                                </li>
+                                                <% @ent.sous_categories.each do |souscat| %>
+                                                    <li class="sous-categorie-item">
+                                                    <%= button_tag souscat.nom_sous_categorie, name: :sous_categorie, value: souscat.id, class:'souscatitem' %>
+                                                    </li>
+                                                <%end%>
+                                                <li style="margin-top:16px;" class="category-main">
+                                                    <%= image_tag("svg/autres.svg", class:'category-icon')%>
+                                                    <span class="aut">AUTRES</span>
+                                                </li>
+                                                <% @aut.sous_categories.each do |souscat| %>
+                                                    <li class="sous-categorie-item">
+                                                    <%= button_tag souscat.nom_sous_categorie, name: :sous_categorie, value: souscat.id, class:'souscatitem' %>
+                                                    </li>
+                                                <%end%>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
                             <div id="category-dropdown-seperator"> </div>
                         </div>
                     </div>
                     <div class="search-bar-container1">
                         <div style="position: relative;">
-                            <button id="city-dropdown" type="button">
+                            <button id="city-dropdown" type="button" class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <%= image_tag("svg/city-dropdown-icon.svg")%>
                                 <span id="city-dropdown-text">Tout le Maroc</span>
                                 <%= image_tag("svg/city-dropdown-button.svg")%>
                             </button>
+                            <div class="dropdown-menu" aria-labeledby="dropdownMenuButton2">
+                                <% @villes.each do |ville| %>
+                                    <li class="dropdown-item">
+                                        <%= button_tag ville.nom_ville, name: :ville, value: ville.id, class:'souscatitem' %>
+                                    </li>
+                                <%end%>
+                            </div>
                             <div id="city-dropdown-seperator"></div>
                         </div>
                     </div>
@@ -38,43 +155,43 @@
                 <div id="search-categories">
                     <div id="categories">
                         <div id="category">
-                            <%= link_to image_tag('svg/informatique-et-multimedia.svg'), root_path,class:'' %>
+                            <%= button_tag image_tag('svg/informatique-et-multimedia.svg'),name: :categorie ,value: 1,class:'souscatitem' %>
                             <p class="sc-1rzrqgy-1 exaGxH">INFORMATIQUE ET MULTIMEDIA</p>
                         </div>
                         <div id="category">
-                            <%= link_to image_tag('svg/vehicules.svg'), root_path,class:'' %>
+                            <%= button_tag image_tag('svg/vehicules.svg'),name: :categorie, value: 3,class:'souscatitem' %>
                             <p class="sc-1rzrqgy-1 exaGxH">VEHICULES</p>
                         </div>
                         <div id="category">
-                            <%= link_to image_tag('svg/immobilier.svg'), root_path,class:'' %>
+                            <%= button_tag image_tag('svg/immobilier.svg'),name: :categorie, value: 5,class:'souscatitem' %>
                             <p class="sc-1rzrqgy-1 exaGxH">IMMOBILIER</p>
                         </div>
                         <div id="category">
-                            <%= link_to image_tag('svg/pour-la-maison-et-jarding.svg'), root_path,class:'' %>
+                            <%= button_tag image_tag('svg/pour-la-maison-et-jarding.svg'),name: :categorie, value: 6,class:'souscatitem' %>
                             <p class="sc-1rzrqgy-1 exaGxH">POUR LA MAISON ET JARDIN</p>
                         </div>
                         <div id="category">
-                            <%= link_to image_tag('svg/habillement-et-bien-etre.svg'), root_path,class:'' %>
+                            <%= button_tag image_tag('svg/habillement-et-bien-etre.svg'),name: :categorie, value: 2,class:'souscatitem' %>
                             <p class="sc-1rzrqgy-1 exaGxH">HABILLEMENT ET BIEN ETRE</p>
                         </div>
                         <div id="category">
-                            <%= link_to image_tag('svg/loisirs-et-divertissement.svg'), root_path,class:'' %>
+                            <%= button_tag image_tag('svg/loisirs-et-divertissement.svg'),name: :categorie, value: 4,class:'souscatitem' %>
                             <p class="sc-1rzrqgy-1 exaGxH">LOISIRS ET DIVERTISSEMENT</p>
                         </div>
                         <div id="category">
-                            <%= link_to image_tag('svg/emploi-et-services'), root_path,class:'' %>
+                            <%= button_tag image_tag('svg/emploi-et-services.svg'),name: :categorie, value: 7,class:'souscatitem' %>
                             <p class="sc-1rzrqgy-1 exaGxH">EMPLOI ET SERVICES</p>
                         </div>
                         <div id="category">
-                            <%= link_to image_tag('svg/entreprises.svg'), root_path,class:'' %>
+                            <%= link_to image_tag('svg/entreprises.svg'),name: :categorie, value: 8,class:'souscatitem' %>
                             <p class="sc-1rzrqgy-1 exaGxH">ENTREPRISES</p>
                         </div>
                         <div id="category">
-                            <%= link_to image_tag('svg/autres.svg'), root_path,class:'' %>
+                            <%= link_to image_tag('svg/autres.svg'),name: :categorie, value: 10,class:'souscatitem' %>
                             <p class="sc-1rzrqgy-1 exaGxH">Autres</p>
                         </div>
                         <div id="category">
-                            <%= link_to image_tag('svg/vente-en-douane.svg'), root_path,class:'' %>
+                            <%= link_to image_tag('svg/vente-en-douane.svg'),name: :categorie, value: 9,class:'souscatitem' %>
                             <p class="sc-1rzrqgy-1 exaGxH">VENTE EN DOUANE</p>
                         </div>
                     </div>
@@ -87,8 +204,10 @@
                     <span id="search-button-icon"><%= image_tag("svg/search-button-icon.svg") %></span>
                     Rechercher ( 1 132 724 )
                 </button>
+                
             </div>
-        </form>
+        <%end%>
+    </div>
     </div>
 </div>
 
