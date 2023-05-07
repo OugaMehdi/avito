@@ -11,15 +11,13 @@
 }
 
 #gauche {
-    width: 65%;
+    width: 68%;
     height: fit-content;
 
 }
 
 #droite{
-    width: 30%;
-    height: 20%;
-    background-color: red;
+    width: 25%;
 }
 
 #vue{
@@ -81,6 +79,13 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.annonce-image img{
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
 .annonce-info {
     padding: 10px 15px;
     display: flex;
@@ -117,4 +122,68 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#premium{
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#premium-child{
+    height: 50px;
+    width: 70%;
+    margin: auto;
+    color: rgb(252, 148, 45);
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    border-bottom: 2px solid rgb(252, 148, 45);
+    svg{
+        margin-right: 10px;
+    }
+}
+
+.premium-carte{
+    margin-top: 15px;
+    width: 100%;
+    height: 260px;
+    border-radius: 10px;
+    background-color: white;
+    
+}
+.premium-carte-img {
+    height: 180px;
+    img{
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        object-fit: cover;
+    }
+}
+.premium-carte-text{
+    margin: 10px;
+}
+
+.premium-carte-text-div1{
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5a52318;
+        padding: 0 10px;
+        font-size: 14px;
+        color: #F5A623;
+        border-radius: 10px;
+    }
+    span{
+        color: rgb(46, 107, 255);
+        font-size: 20px;
+    }
+    display: flex;
+    justify-content: space-between;
 }
