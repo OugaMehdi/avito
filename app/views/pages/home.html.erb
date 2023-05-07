@@ -1,2 +1,93 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="app-container">
+    <div id="search-bar-container">
+        <form id="search-form">
+            <div id="search-items">
+                <div id="search-options">
+                    <div class="search-bar-container1">
+                        <div id="search-bar-container2">
+                            <div id="input-container" tabindex="-1">
+                                <div id="icon-container"><%= image_tag("svg/search-bar-icon.svg") %></div>
+                                <input type="text" autocomplete="off" name="searchbar" placeholder="Que recherchez-vous?" class="searchbar" value="">
+                                <div id="input-seperator"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="search-bar-container1">
+                        <div>
+                            <button class="category-dropdown-container" type="button">
+                                <%= image_tag("svg/category-dropdown-icon.svg") %>
+                                <span id="category-dropdown-text">Choisissez une catégorie</span>
+                                <%= image_tag("svg/category-dropdown-button.svg") %>
+                            </button>
+                            <div id="category-dropdown-seperator"> </div>
+                        </div>
+                    </div>
+                    <div class="search-bar-container1">
+                        <div style="position: relative;">
+                            <button id="city-dropdown" type="button">
+                                <%= image_tag("svg/city-dropdown-icon.svg")%>
+                                <span id="city-dropdown-text">Tout le Maroc</span>
+                                <%= image_tag("svg/city-dropdown-button.svg")%>
+                            </button>
+                            <div id="city-dropdown-seperator"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="search-options"></div>
+                <div id="search-categories">
+                    <div id="categories">
+                        <div id="category">
+                            <%= link_to image_tag('svg/informatique-et-multimedia.svg'), root_path,class:'' %>
+                            <p class="sc-1rzrqgy-1 exaGxH">INFORMATIQUE ET MULTIMEDIA</p>
+                        </div>
+                        <div id="category">
+                            <%= link_to image_tag('svg/vehicules.svg'), root_path,class:'' %>
+                            <p class="sc-1rzrqgy-1 exaGxH">VEHICULES</p>
+                        </div>
+                        <div id="category">
+                            <%= link_to image_tag('svg/immobilier.svg'), root_path,class:'' %>
+                            <p class="sc-1rzrqgy-1 exaGxH">IMMOBILIER</p>
+                        </div>
+                        <div id="category">
+                            <%= link_to image_tag('svg/pour-la-maison-et-jarding.svg'), root_path,class:'' %>
+                            <p class="sc-1rzrqgy-1 exaGxH">POUR LA MAISON ET JARDIN</p>
+                        </div>
+                        <div id="category">
+                            <%= link_to image_tag('svg/habillement-et-bien-etre.svg'), root_path,class:'' %>
+                            <p class="sc-1rzrqgy-1 exaGxH">HABILLEMENT ET BIEN ETRE</p>
+                        </div>
+                        <div id="category">
+                            <%= link_to image_tag('svg/loisirs-et-divertissement.svg'), root_path,class:'' %>
+                            <p class="sc-1rzrqgy-1 exaGxH">LOISIRS ET DIVERTISSEMENT</p>
+                        </div>
+                        <div id="category">
+                            <%= link_to image_tag('svg/emploi-et-services'), root_path,class:'' %>
+                            <p class="sc-1rzrqgy-1 exaGxH">EMPLOI ET SERVICES</p>
+                        </div>
+                        <div id="category">
+                            <%= link_to image_tag('svg/entreprises.svg'), root_path,class:'' %>
+                            <p class="sc-1rzrqgy-1 exaGxH">ENTREPRISES</p>
+                        </div>
+                        <div id="category">
+                            <%= link_to image_tag('svg/autres.svg'), root_path,class:'' %>
+                            <p class="sc-1rzrqgy-1 exaGxH">Autres</p>
+                        </div>
+                        <div id="category">
+                            <%= link_to image_tag('svg/vente-en-douane.svg'), root_path,class:'' %>
+                            <p class="sc-1rzrqgy-1 exaGxH">VENTE EN DOUANE</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="search-options"></div>
+            </div>
+            <div id="seperator"></div>
+            <div id="search-button-container">
+                <button type="submit" aria-label="Rechercher" id="search-button">
+                    <span id="search-button-icon"><%= image_tag("svg/search-button-icon.svg") %></span>
+                    Rechercher ( 1 132 724 )
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

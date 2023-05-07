@@ -1,0 +1,41 @@
+<%
+=begin%>
+ <form class="login-form">
+<div class="form-container">
+    <h5 class="font-weight-bold">Connectez-vous à Avito</h5>
+    <p class="text-secondary">Vous pouvez utiliser l'authentification rapide avec votre compte Facebook ou Gmail.</p>
+    <div role='button' class="d-flex justify-content-center mt-4">
+        <div class="border py-2 pl-3 pr-4 d-flex justify-content-center mr-5 rounded">
+            <img src="assets/svg/gmailLogin.svg" class="mr-2">
+            <small class="w-100">Se connecter</small>
+        </div>
+        <div role='button'  class="border py-2 pl-3 pr-4 d-flex justify-content-center rounded">
+            <img src="assets/svg/fbLogin.svg" class="mr-2">
+            <small class="w-100">Se connecter</small>
+        </div>
+    </div>
+    <div class="position-relative">
+        <div class="separator">ou bien</div>
+    </div>
+    <p class="text-secondary">Entrez votre e-mail et mot de passe</p>
+    <div class="form-group">
+      <label for="inputEmail">E-mail</label>
+      <div class="email-input">
+          <%= image_tag('svg/email.svg') %>
+          <input type="email" class="form-control" id="inputEmail" placeholder="E-mail">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Mot de passe</label>
+      <div class="password-input">
+          <%= image_tag('svg/password.svg') %>
+          <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe">
+      </div>
+      <small class="float-right mt-2 text-underline">Mot de passe oublié?</small>
+    </div>
+    <button type="submit" class="btn btn-primary w-100 mt-4">Se connecter</button>
+    <p class="mt-4 text-center" >Pas encore inscrit? <%= link_to "S'inscrire gratuitement.", register_path %></p>
+</div>
+</form> 
+<%
+=end%>

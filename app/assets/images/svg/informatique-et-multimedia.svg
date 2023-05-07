@@ -1,0 +1,8 @@
+<svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+    aria-labelledby="InformatiqueEtMultimediaTitleID"
+    style="fill: rgb(46, 201, 102); stroke: rgb(46, 201, 102); stroke-width: 0;">
+    <title id="InformatiqueEtMultimediaTitleID">InformatiqueEtMultimedia Icon</title>
+    <path fill-rule="evenodd"
+        d="M22.5 7A1.5 1.5 0 0124 8.5v14c0 .826-.671 1.5-1.5 1.5h-7c-.829 0-1.5-.675-1.5-1.5v-14c0-.827.673-1.5 1.5-1.5h7zm-8.937 17H8c.279-2.892 1.559-2.657 2.108-4H13v2.5c0 .524.182 1.175.563 1.5zM7 24H3c-.177-1.993-.667-2.729-1.413-3.408a4.816 4.816 0 01-.002-7.146C2.333 12.766 2.831 11.97 3 10h4c.202 1.97.583 2.766 1.332 3.446a4.828 4.828 0 011.544 2.971h.624v1.166h-.618a4.83 4.83 0 01-1.552 3.009C7.583 21.271 7.154 21.983 7 24zm12-1a1 1 0 110-2 1 1 0 010 2zM5 20.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7zm18-.5V9.976h-8V20h8zM7 18H4v-3h1v2h2v1zM19.5 8h-1a.5.5 0 000 1h1a.5.5 0 000-1zM5 9H3V2a2 2 0 012-2h15a2 2 0 012 2v4h-2V3H5v6z"
+        clip-rule="evenodd"></path>
+</svg>
