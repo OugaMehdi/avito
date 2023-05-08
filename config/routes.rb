@@ -30,5 +30,8 @@ Rails.application.routes.draw do
   get '/mesannonces', to:'annonces#show'
 
 
+  post 'mescommandes' => 'commandes#create'
+  get 'mescommandes' => 'commandes#show'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

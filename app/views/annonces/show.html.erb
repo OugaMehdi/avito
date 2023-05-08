@@ -80,7 +80,24 @@
                 </div>
                 <% end %>
             </div>
+
+        </div>
+    </div>
+    <div class="annonce-part3">
+        <div class="annonce-etat">
+            <p>État</p>
+            <span ><%= @annonce.etat %></span>
+        </div>
+    </div>
+    <div class="annonce-part4">
+        <div>Description</div>
+        <span><%= @annonce.description %></span>
+    </div>
+    <div class="annonce-part5">
+        <%= button_to 'COMMANDER', mescommandes_path(id: @annonce.id), method: :post  %>
+
         </div>  
+
     </div>
 
     </div>
