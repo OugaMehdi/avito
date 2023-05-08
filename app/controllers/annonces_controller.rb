@@ -1,5 +1,4 @@
 class AnnoncesController < ApplicationController
-  before_action :set_annonce, only: %i[ show edit update destroy ]
 
   # GET /annonces or /annonces.json
   def index

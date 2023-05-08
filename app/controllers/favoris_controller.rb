@@ -1,5 +1,4 @@
 class FavorisController < ApplicationController
-  before_action :set_favori, only: %i[ show edit update destroy ]
 
   # GET /favoris or /favoris.json
   def index
