@@ -20,7 +20,9 @@ class FavorisController < ApplicationController
 
   # POST /favoris or /favoris.json
   def create
-    @favori = Favori.new(favori_params)
+    @favori = Favori.new()
+    @favori.utilisateur = utilisateur_courant
+    @favori.annonce = Annonce.find(params[:annonce].to_i)
 
     respond_to do |format|
       if @favori.save
