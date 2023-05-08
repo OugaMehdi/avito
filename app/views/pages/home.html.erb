@@ -134,17 +134,7 @@
                     </div>
                     <div class="search-bar-container1">
                         <div style="position: relative;">
-                            <button id="city-dropdown" type="button" class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <%= image_tag("svg/city-dropdown-icon.svg")%>
-                                <span id="city-dropdown-text">Tout le Maroc</span>
-                            </button>
-                            <div class="dropdown-menu ville-drop" aria-labeledby="dropdownMenuButton2">
-                                <% @villes.each do |ville| %>
-                                    <li class="dropdown-item">
-                                        <%= button_tag ville.nom_ville,type: 'submit', name: :ville, value: ville.id, class:'souscatitem' %>
-                                    </li>
-                                <%end%>
-                            </div>
+                                <%= select_tag :ville, options_for_select(@villes.collect{|v| [v.nom_ville, v.id]}, class:'dropdown-item'), id:'city-dropdown' %>
                             <div id="city-dropdown-seperator"></div>
                         </div>
                     </div>
