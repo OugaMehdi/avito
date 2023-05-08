@@ -53,10 +53,11 @@ class FavorisController < ApplicationController
 
   # DELETE /favoris/1 or /favoris/1.json
   def destroy
+    @favori = Favori.find(params[:id])
     @favori.destroy
 
     respond_to do |format|
-      format.html { redirect_to favoris_url, notice: "Favori was successfully destroyed." }
+      format.html { redirect_to favoris_url, notice: "Favori supprimé avec succés." }
       format.json { head :no_content }
     end
   end
