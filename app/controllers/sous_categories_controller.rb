@@ -1,5 +1,4 @@
 class SousCategoriesController < ApplicationController
-  before_action :set_sous_categorie, only: %i[ show edit update destroy ]
 
   # GET /sous_categories or /sous_categories.json
   def index

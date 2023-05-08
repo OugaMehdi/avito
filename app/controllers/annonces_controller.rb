@@ -1,5 +1,4 @@
 class AnnoncesController < ApplicationController
-  before_action :set_annonce, only: %i[  edit update destroy ]
 
   # GET /annonces or /annonces.json
   def index
@@ -7,6 +6,9 @@ class AnnoncesController < ApplicationController
 
   # GET /annonces/1 or /annonces/1.json
   def show
+  end
+
+  def myannonces
     @annonces = Annonce.joins(:utilisateur).where(utilisateur: utilisateur_courant)
   end
 
