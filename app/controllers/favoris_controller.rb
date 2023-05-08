@@ -24,15 +24,18 @@ class FavorisController < ApplicationController
     @favori.utilisateur = utilisateur_courant
     @favori.annonce = Annonce.find(params[:annonce].to_i)
 
-    respond_to do |format|
-      if @favori.save
-        format.html { redirect_to favori_url(@favori), notice: "Favori was successfully created." }
-        format.json { render :show, status: :created, location: @favori }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @favori.errors, status: :unprocessable_entity }
-      end
+    if @favori.save
+      redirect_to mesfavoris_path
     end
+    # respond_to do |format|
+    #   if @favori.save
+    #     format.html { redirect_to favori_url(@favori), notice: "Favori was successfully created." }
+    #     format.json { render :show, status: :created, location: @favori }
+    #   else
+    #     format.html { render :new, status: :unprocessable_entity }
+    #     format.json { render json: @favori.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /favoris/1 or /favoris/1.json
