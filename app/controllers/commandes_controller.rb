@@ -1,5 +1,5 @@
 class CommandesController < ApplicationController
-  before_action :set_commande, only: %i[ show edit update destroy ]
+  
 
   # GET /commandes or /commandes.json
   def index
@@ -8,6 +8,7 @@ class CommandesController < ApplicationController
 
   # GET /commandes/1 or /commandes/1.json
   def show
+    @commandes = Commande.where(utilisateur_id: utilisateur_courant.id)
   end
 
   # GET /commandes/new
@@ -21,16 +22,13 @@ class CommandesController < ApplicationController
 
   # POST /commandes or /commandes.json
   def create
-    @commande = Commande.new(commande_params)
-
-    respond_to do |format|
-      if @commande.save
-        format.html { redirect_to commande_url(@commande), notice: "Commande was successfully created." }
-        format.json { render :show, status: :created, location: @commande }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @commande.errors, status: :unprocessable_entity }
-      end
+    @annonce = Annonce.find(params[:id])
+    @commande = Commande.new(annonce_id: @annonce.id)
+    @commande.utilisateur = utilisateur_courant
+    if @commande.save
+      redirect_to mescommandes_path, notice: 'La commande a été ajoutée.'
+    else
+      redirect_to root_path
     end
   end
 
@@ -65,6 +63,6 @@ class CommandesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def commande_params
-      params.fetch(:commande, {})
+      params.require(:commande).permit(:annonce_id)
     end
 end
