@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :commandes
   resources :villes
   resources :utilisateurs
-  resources :annonces, only: [:create , :destroy, :show]
+  resources :annonces
 
   get 'villes/new'
   root 'pages#home'
@@ -27,7 +27,8 @@ Rails.application.routes.draw do
   get '/search', to:'pages#home'
   post '/search', to:'pages#home'
 
-  get '/mesannonces', to:'annonces#index'
+  get '/mesannonces', to:'annonces#show'
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
