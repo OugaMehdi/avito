@@ -3,7 +3,7 @@ class AnnoncesController < ApplicationController
 
   # GET /annonces or /annonces.json
   def index
-    @annonces = Annonce.all
+    @annonces = Annonce.joins(:utilisateur).where(utilisateur: utilisateur_courant)
   end
 
   # GET /annonces/1 or /annonces/1.json
