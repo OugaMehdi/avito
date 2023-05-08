@@ -1,5 +1,4 @@
 class VillesController < ApplicationController
-  before_action :set_ville, only: %i[ show edit update destroy ]
 
   # GET /villes or /villes.json
   def index

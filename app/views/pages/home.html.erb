@@ -16,12 +16,11 @@
                     </div>
                     <div class="search-bar-container1">
                         <div>
-                            <button class="category-dropdown-container dropdown-toggle" type="button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            <button class="category-dropdown-container dropdown-toggle " type="button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                 <%= image_tag("svg/category-dropdown-icon.svg") %>
                                 <span id="category-dropdown-text">Choisissez une catégorie</span>
-                                <%= image_tag("svg/category-dropdown-button.svg") %>
                             </button>
-                            <div class="dropdown-menu" style="width:100%;" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-menu categorie-drop" style="width:100%;" aria-labelledby="dropdownMenuButton">
                                     <div style="padding: 24px 18px 24px 24px;">
                                         <div class="dropdown-menu-items">
                                             <div class="dropdown-menu-item">
@@ -138,9 +137,8 @@
                             <button id="city-dropdown" type="button" class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <%= image_tag("svg/city-dropdown-icon.svg")%>
                                 <span id="city-dropdown-text">Tout le Maroc</span>
-                                <%= image_tag("svg/city-dropdown-button.svg")%>
                             </button>
-                            <div class="dropdown-menu" aria-labeledby="dropdownMenuButton2">
+                            <div class="dropdown-menu ville-drop" aria-labeledby="dropdownMenuButton2">
                                 <% @villes.each do |ville| %>
                                     <li class="dropdown-item">
                                         <%= button_tag ville.nom_ville,type: 'submit', name: :ville, value: ville.id, class:'souscatitem' %>
@@ -229,18 +227,20 @@
             <span class="text-secondary">Toutes les catégories à vendre au Maroc</span>
             <div class="mt-2">
                 <% @annonces.each do |a| %>
-                <a class="annonce-link" href="<%= annonce_path(a.id) %>">
+                <div class="annonce-link" >
                     <div class="annonce">
                         <div class="w-25 annonce-image " >
-                            <%= image_tag(url_for(a.photo)) %>  
+                            <%= link_to image_tag(url_for(a.photo)), annonce_path(a.id) %>  
                         </div>
                         <div class="w-75 annonce-info">
                             <div>
                                 <div class="d-flex">
                                     <span><%= a.prix %></span>
-                                    <button class="ml-auto">
+                                    <div class="ml-auto">
+                                    <%= button_to favoris_path(annonce: a), method: :post, class: "ml-auto" do %>
                                         <svg height="19" width="19" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="HeartOutlineTitleID" style="fill: rgb(74, 74, 74); stroke: rgb(74, 74, 74); stroke-width: 0;"><title id="HeartOutlineTitleID">HeartOutline Icon</title><path fill-rule="evenodd" d="M2.405 12.33c-1.231-3.824.407-7.833 4.078-9.015a6.562 6.562 0 015.25.541l.263.158.268-.159a6.571 6.571 0 014.982-.619l.266.08c3.673 1.182 5.317 5.192 4.082 9.03a12.42 12.42 0 01-2.977 4.736 34.695 34.695 0 01-5.995 4.665l-.23.143a.732.732 0 01-.762.006l-.245-.147a34.717 34.717 0 01-6.005-4.673 12.427 12.427 0 01-2.975-4.747zm9.194-6.363l-.185-.132a4.784 4.784 0 00-4.162-.606c-2.664.856-3.872 3.808-2.94 6.696a10.232 10.232 0 002.448 3.899A31.118 31.118 0 0012.135 20L12 19.916l.438-.275a31.11 31.11 0 004.304-3.342l.495-.47a10.226 10.226 0 002.45-3.889c.934-2.9-.279-5.854-2.944-6.71a4.793 4.793 0 00-4.336.728.686.686 0 01-.81.009z" clip-rule="evenodd"></path></svg>
-                                    </button>
+                                    <%end%>
+                                    </div>
                                 </div>
                                 <p><%= a.titre %></p>
                             </div>
@@ -263,7 +263,7 @@
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
                 <% end %>
             </div>
         </div>
