@@ -16,12 +16,11 @@
                     </div>
                     <div class="search-bar-container1">
                         <div>
-                            <button class="category-dropdown-container dropdown-toggle" type="button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            <button class="category-dropdown-container dropdown-toggle " type="button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                 <%= image_tag("svg/category-dropdown-icon.svg") %>
                                 <span id="category-dropdown-text">Choisissez une catégorie</span>
-                                <%= image_tag("svg/category-dropdown-button.svg") %>
                             </button>
-                            <div class="dropdown-menu" style="width:100%;" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-menu categorie-drop" style="width:100%;" aria-labelledby="dropdownMenuButton">
                                     <div style="padding: 24px 18px 24px 24px;">
                                         <div class="dropdown-menu-items">
                                             <div class="dropdown-menu-item">
@@ -138,9 +137,8 @@
                             <button id="city-dropdown" type="button" class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <%= image_tag("svg/city-dropdown-icon.svg")%>
                                 <span id="city-dropdown-text">Tout le Maroc</span>
-                                <%= image_tag("svg/city-dropdown-button.svg")%>
                             </button>
-                            <div class="dropdown-menu" aria-labeledby="dropdownMenuButton2">
+                            <div class="dropdown-menu ville-drop" aria-labeledby="dropdownMenuButton2">
                                 <% @villes.each do |ville| %>
                                     <li class="dropdown-item">
                                         <%= button_tag ville.nom_ville,type: 'submit', name: :ville, value: ville.id, class:'souscatitem' %>
