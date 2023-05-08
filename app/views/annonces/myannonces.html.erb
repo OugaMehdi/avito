@@ -1,0 +1,86 @@
+<%= render "/layouts/navigation_utilisateur" %>
+
+<div class="app-container mb-5">
+
+<div id="liste-annonces">
+        <div id="gauche" class="m-auto">
+            <div id="vue">
+                <span class="ml-2">Vue:</span>
+                <button class="d-flex display-column">
+                    <svg height="19" width="19" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="LayoutRowLineTitleID" style="fill: rgb(45, 45, 45); stroke: rgb(45, 45, 45); stroke-width: 0;"><title id="LayoutRowLineTitleID">LayoutRowLine Icon</title><path fill="none" d="M0 0h24v24H0z"></path><path d="M19 11V5H5v6h14zm0 2H5v6h14v-6zM4 3h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1z"></path></svg>
+                    <span>LISTE</span>
+                </button>
+                <button class="d-flex display-column">
+                    <svg height="19" width="19" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="LayoutGridLineTitleID" style="fill: rgb(45, 45, 45); stroke: rgb(45, 45, 45); stroke-width: 0;"><title id="LayoutGridLineTitleID">LayoutGridLine Icon</title><path fill="none" d="M0 0h24v24H0z"></path><path d="M21 3a1 1 0 011 1v16a1 1 0 01-1 1H3a1 1 0 01-1-1V4a1 1 0 011-1h18zM11 13H4v6h7v-6zm9 0h-7v6h7v-6zm-9-8H4v6h7V5zm9 0h-7v6h7V5z"></path></svg>
+                    <span>CARTES</span>
+                </button>
+
+            </div>
+            <div class="mt-2">
+                <% @annonces.each do |a| %>
+                <div class="annonce">
+                    <div class="w-25 annonce-image " >
+                        <%= link_to image_tag(url_for(a.photo)), a %>  
+                    </div>
+                    <div class="w-75 annonce-info">
+                        <div>
+                            <div class="d-flex">
+                                <span><%= a.prix %></span>
+                                <div class="ml-auto">
+                                <%= button_to annonce_path(a), method: :delete, class: "ml-auto" do %>
+                                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                         width="24" height="24" viewBox="0 0 512.000000 512.000000"
+                                         preserveAspectRatio="xMidYMid meet">
+
+                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                    fill="#000000" stroke="none">
+                                    <path d="M1925 5114 c-174 -38 -286 -120 -351 -258 -41 -85 -53 -169 -54 -353
+                                    l0 -133 105 0 105 0 0 166 c0 100 5 183 12 206 17 57 88 133 146 155 44 17 91
+                                    18 672 18 613 0 626 0 670 -21 58 -27 108 -77 134 -134 17 -38 21 -71 24 -217
+                                    l4 -173 100 0 101 0 -6 188 c-7 232 -20 280 -105 388 -47 60 -131 119 -209
+                                    147 -57 21 -73 22 -693 23 -349 1 -644 0 -655 -2z"/>
+                                    <path d="M742 4234 c-155 -77 -182 -290 -52 -408 78 -70 -46 -66 1865 -66
+                                    1945 0 1791 -6 1876 79 34 33 51 61 63 100 20 67 20 84 1 147 -19 66 -67 121
+                                    -129 150 l-51 24 -1761 0 -1760 0 -52 -26z"/>
+                                    <path d="M962 1953 l3 -1608 23 -60 c45 -121 131 -212 244 -258 l53 -22 1239
+                                    -3 c813 -1 1258 1 1295 8 144 27 262 140 311 298 20 63 20 96 20 1658 l0 1594
+                                    -1595 0 -1595 0 2 -1607z m898 1212 c16 -8 34 -24 40 -34 7 -13 10 -422 10
+                                    -1241 0 -1353 5 -1257 -65 -1280 -26 -9 -41 -8 -70 4 -69 29 -65 -47 -65 1278
+                                    0 1116 1 1195 18 1228 28 56 78 73 132 45z m757 -7 c44 -36 43 -17 43 -1268 0
+                                    -1323 4 -1247 -65 -1276 -29 -12 -44 -13 -70 -4 -70 23 -65 -73 -65 1280 0
+                                    815 3 1228 10 1240 25 46 107 61 147 28z m752 -13 l26 -25 0 -1229 0 -1229
+                                    -24 -26 c-13 -14 -36 -28 -52 -31 -37 -8 -93 18 -108 51 -8 18 -11 353 -11
+                                    1242 0 1138 2 1218 18 1238 41 51 106 55 151 9z"/>
+                                    </g>
+                                </svg>
+                                <%end%>
+                                </div>
+
+                            </div>
+                            <p><%= a.titre %></p>
+                        </div>
+                        <div class="annonce-details">
+                            <small ><%= a.sous_categorie.nom_sous_categorie %></small>
+                            <div class="line"></div>
+                            <div class="d-flex">
+                                <div class="mr-3">
+                                    <svg height="14" width="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="TimeFillTitleID" style="fill: rgb(155, 155, 155); stroke: rgb(155, 155, 155); stroke-width: 0;"><title id="TimeFillTitleID">TimeFill Icon</title><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm1-10V7h-2v7h6v-2h-4z"></path></svg>
+                                    <small >il y a <%= time_ago_in_words(a.created_at) %></small>
+                                </div>
+                                <div>
+                                    <svg height="14" width="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MapPinFillTitleID" style="fill: rgb(155, 155, 155); stroke: rgb(155, 155, 155); stroke-width: 0;"><title id="MapPinFillTitleID">MapPinFill Icon</title><path d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1112.728 0zM12 15a4 4 0 100-8 4 4 0 000 8zm0-2a2 2 0 110-4 2 2 0 010 4z"></path></svg>
+                                    <small ><%= a.utilisateur.ville.nom_ville %></small>
+                                </div>
+                                <div class="store">
+                                    <svg height="16" width="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="Store2FillTitleID" style="fill: rgb(252, 148, 45); stroke: rgb(252, 148, 45); stroke-width: 0;"><title id="Store2FillTitleID">isDelivery</title><path d="M22 20v2H2v-2h1v-6.758A4.496 4.496 0 011 9.5c0-.827.224-1.624.633-2.303L4.345 2.5a1 1 0 01.866-.5H18.79a1 1 0 01.866.5l2.702 4.682A4.496 4.496 0 0121 13.242V20h1zM5.789 4L3.356 8.213a2.5 2.5 0 004.466 2.216c.335-.837 1.52-.837 1.856 0a2.5 2.5 0 004.644 0c.335-.837 1.52-.837 1.856 0a2.5 2.5 0 104.457-2.232L18.21 4H5.79z"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>  
+    </div>
+
+    </div>

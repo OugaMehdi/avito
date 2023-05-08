@@ -1,0 +1,14 @@
+.show-container{
+    margin-right: calc(0px - var(--gutter));
+    margin-left: calc(0px - var(--gutter));
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#right{
+    width:25%
+}
+
+#left{
+    width:75%;
+}
