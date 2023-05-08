@@ -1,14 +1,13 @@
 class AnnoncesController < ApplicationController
-  before_action :set_annonce, only: %i[ show edit update destroy ]
+  before_action :set_annonce, only: %i[  edit update destroy ]
 
   # GET /annonces or /annonces.json
   def index
-    @annonces = Annonce.joins(:utilisateur).where(utilisateur: utilisateur_courant)
   end
 
   # GET /annonces/1 or /annonces/1.json
   def show
-    @annonce = Annonce.find(params[:id])
+    @annonces = Annonce.joins(:utilisateur).where(utilisateur: utilisateur_courant)
   end
 
   # GET /annonces/new
@@ -19,6 +18,7 @@ class AnnoncesController < ApplicationController
 
   # GET /annonces/1/edit
   def edit
+    
   end
 
   # POST /annonces or /annonces.json
