@@ -29,7 +29,7 @@ class UtilisateursController < ApplicationController
     @utilisateur = Utilisateur.new(utilisateur_params)
     if @utilisateur.save
       flash[:success] = "Bienvenue !"
-        redirect_to @utilisateur
+        redirect_to login_path
     else
       render 'new'
     end

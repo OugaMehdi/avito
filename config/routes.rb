@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :commandes
   resources :villes
   resources :utilisateurs
-  resources :annonces, only: [:create , :destroy]
+  resources :annonces, only: [:create , :destroy, :show]
 
   get 'villes/new'
   root 'pages#home'
@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   patch 'editPassword' => 'utilisateurs#update_password'
 
   get '/annonces' => 'annonces#new'
+
+
+  get 'annonce' => 'annonces#show' 
 
   get '/search', to:'pages#home'
   post '/search', to:'pages#home'
