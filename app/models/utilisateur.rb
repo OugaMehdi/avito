@@ -1,6 +1,9 @@
 class Utilisateur < ApplicationRecord
 
     has_many :annonces
+    has_many :favoris
+
+
     belongs_to :ville
     
     attr_accessor :current_password, :new_password, :new_password_confirmation

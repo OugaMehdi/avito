@@ -2,7 +2,7 @@ class FavorisController < ApplicationController
 
   # GET /favoris or /favoris.json
   def index
-    @favoris = Favori.all
+    @favoris = Favori.joins(:utilisateur).where(utilisateur: utilisateur_courant)
   end
 
   # GET /favoris/1 or /favoris/1.json
