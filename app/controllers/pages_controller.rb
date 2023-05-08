@@ -19,7 +19,6 @@ class PagesController < ApplicationController
 
     @villes = Ville.all
 
-    @annonces = Annonce.includes(:sous_categorie, utilisateur: :ville).all
     @utilisateur = utilisateur_courant
   end
 
