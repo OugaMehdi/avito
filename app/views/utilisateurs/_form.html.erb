@@ -27,41 +27,41 @@
       <label for="inputEmail">Nom</label>
       <div class="email-input">
           <%= image_tag('svg/user-icon.svg') %>
-          <%= f.text_field :nom , class: "form-control", placeholder: "Votre nom" %>
+          <%= f.text_field :nom , class: "form-control", placeholder: "Votre nom", required: true %>
       </div>
     </div>
     <div class="form-group">
       <label for="inputEmail">E-mail</label>
       <div class="email-input">
           <%= image_tag('svg/email.svg') %>
-          <%= f.email_field :email, class: "form-control", placeholder: "E-mail" %>
+          <%= f.email_field :email, class: "form-control", placeholder: "E-mail", required: true %>
       </div>
     </div>
     <div class="form-group">
       <label for="inputTel">Téléphone</label>
       <div class="email-input">
           <%= image_tag('svg/tel.svg') %>
-          <%= f.text_field :tel , class: "form-control" , placeholder: "06XXXXXXXX" %>
+          <%= f.text_field :tel , class: "form-control" , placeholder: "06XXXXXXXX", required: true %>
       </div>
     </div>
     <div class="form-group">
       <label for="inputPassword">Mot de passe</label>
       <div class="password-input">
           <%= image_tag('svg/password.svg') %>
-          <%= f.password_field :password , class: "form-control" , placeholder: "Choisissez un mot de passe" %>
+          <%= f.password_field :password , class: "form-control" , placeholder: "Choisissez un mot de passe", required: true %>
       </div>
     </div>
     <div class="form-group">
       <label for="inputPasswordConfirm">Confirmer le mot de passe</label>
       <div class="password-input">
           <%= image_tag('svg/password.svg') %>
-          <%= f.password_field :password_confirmation , class: "form-control" , placeholder: "Confirmer le mot de passe" %>
+          <%= f.password_field :password_confirmation , class: "form-control" , placeholder: "Confirmer le mot de passe", required: true %>
       </div>
     </div>
     <div class="form-group">
         <label>Ville</label>
         <div>
-            <%= f.select :ville_id , options_for_select(@villes.collect{|v| [v.nom_ville, v.id]}) ,class: "form-control" %>
+            <%= f.select :ville_id , options_for_select(@villes.collect{|v| [v.nom_ville, v.id]}) ,class: "form-control", required: true %>
         </div>
     </div>
     <div class="form-check d-flex">
