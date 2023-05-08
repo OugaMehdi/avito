@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-  before_action :set_categorie, only: %i[ show edit update destroy ]
 
   # GET /categories or /categories.json
   def index

@@ -5,9 +5,8 @@
 }
 
 #search-form{
-    display: flex;
+    width: 100%;
     position: relative;
-    flex-wrap: wrap;
     margin-bottom: 24px;
     padding: 16px;
     border-radius: 8px;
@@ -44,12 +43,20 @@
     position : relative;
 }
 
+#categories{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
 .search-bar-container1{
     padding: 0px 8px;
     -webkit-box-flex: 1;
     flex-grow: 1;
     box-sizing: border-box;
     max-width: 33.3333%;
+    .dropdown-toggle::after{
+        margin-left: auto;
+    }
 }
 
 #search-bar-container2{
@@ -287,17 +294,12 @@
     margin: 0px;
 }
 
-.dropdown-menu-container{
-    position: absolute;
-    width: 100%;
-    max-width: 970px;
-    left: 0;
-    right: auto;
-    z-index: 1020;
-    border-radius: 8px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgba(68, 68, 68, 0.08) 0px 2px 18px 0px;
-    display: block;
+.categorie-drop{
+    margin-top: 160px;
+    margin-right: 122px;
+}
+.ville-drop{
+    margin-top: 160px;
 }
 
 .category-dropdown-icon2{
