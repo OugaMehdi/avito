@@ -17,6 +17,7 @@
         </div>
         <div class="edit-form">
             <%= form_for(@utilisateur,  url: editInfo_path, :html => {class: "form-horizontal", role: "form", method: :patch, id: "info-form"} ) do |f| %>
+                <%= render './shared/user_error_messages' %>
                 <div class="form-group">
                     <label >Nom</label>
                     <div class="email-input">
@@ -60,6 +61,7 @@
             <% end %> 
 
             <%= form_for(:utilisateur, url: editPassword_path,:html => {class: " form-horizontal", id: "mdp-form", style: "display:none", role: "form" , method: :patch} ) do |f| %>
+                <%= render './shared/user_error_messages' %>
                 <div class="form-group">
                     <label for="inputPassword">Mot de passe actuel</label>
                     <div class="">

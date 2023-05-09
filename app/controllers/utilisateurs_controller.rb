@@ -26,6 +26,7 @@ class UtilisateursController < ApplicationController
 
   # POST /utilisateurs or /utilisateurs.json
   def create
+    @villes = Ville.all
     @utilisateur = Utilisateur.new(utilisateur_params)
     if @utilisateur.save
       flash[:success] = "Bienvenue !"
@@ -39,12 +40,11 @@ class UtilisateursController < ApplicationController
   def update_info
     @villes = Ville.all
     @utilisateur = utilisateur_courant
-    puts @utilisateur.inspect
     if @utilisateur.update(nom: params[:utilisateur][:nom], tel: params[:utilisateur][:tel], ville_id: params[:utilisateur][:ville_id].to_i)
       flash[:success] = "Modifications effectuées avec success"
       render 'edit'
     else
-      flash[:error] = "Failed"
+      render 'edit'
     end
   end
 
@@ -58,11 +58,11 @@ class UtilisateursController < ApplicationController
         render 'edit'
       else
         flash[:danger] = "Erreur lors de la mise à jour du mot de passe."
-        puts "update failed"
+        render 'edit'
       end
     else
       flash[:danger] = "Mot de passe actuel incorrect."
-      puts "authenticate failed"
+      render 'edit'
     end
     
   end

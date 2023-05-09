@@ -1,5 +1,5 @@
 <%= form_with(model: utilisateur, :html => {class: "register-form", role: "form"}) do |f| %>
-<%= render 'shared/error_messages' %>
+
 <div class="form-container">
     <h5 class="font-weight-bold">Créer un compte Avito.ma</h5>
     <div role='button' class="d-flex justify-content-center mt-4">
@@ -22,6 +22,7 @@
     <div class="position-relative">
         <div class="separator">ou bien</div>
     </div>
+    <%= render './shared/user_error_messages' %>
     <p class="text-secondary mt-4">Entrez vos coordonnées ci-dessous</p>
     <div class="form-group">
       <label for="inputEmail">Nom</label>

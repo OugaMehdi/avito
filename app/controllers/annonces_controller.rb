@@ -6,6 +6,7 @@ class AnnoncesController < ApplicationController
 
   # GET /annonces/1 or /annonces/1.json
   def show
+    @annonce = Annonce.find(params[:id])
   end
 
   def myannonces
@@ -34,15 +35,12 @@ class AnnoncesController < ApplicationController
       end
     end
 
-    respond_to do |format|
-      if @annonce.save
-        format.html { redirect_to annonce_url(@annonce), notice: "Annonce was successfully created." }
-        format.json { render :show, status: :created, location: @annonce }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @annonce.errors, status: :unprocessable_entity }
-      end
+    if @annonce.save
+      redirect_to root_path
+    else
+      render :new
     end
+
   end
 
   # PATCH/PUT /annonces/1 or /annonces/1.json
@@ -60,10 +58,11 @@ class AnnoncesController < ApplicationController
 
   # DELETE /annonces/1 or /annonces/1.json
   def destroy
+    @annonce = Annonce.find(params[:id])
     @annonce.destroy
 
     respond_to do |format|
-      format.html { redirect_to annonces_url, notice: "Annonce was successfully destroyed." }
+      format.html { redirect_to myannonces_url, notice: "Annonce supprimé avec succès." }
       format.json { head :no_content }
     end
   end
