@@ -72,6 +72,11 @@
     .vendeur-contact{
         display: flex;
         margin-top: 20px;
+        .vendeur-tel{
+            font-size: 18px;
+            margin-top: 8px;
+            margin-right: 25px;
+        }
         .wtp{
             cursor: pointer;
             border-radius: 100%;

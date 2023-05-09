@@ -219,7 +219,7 @@
             <span class="text-secondary">Toutes les catégories à vendre au Maroc</span>
             <div class="mt-2">
                 <% @annonces.each do |a| %>
-                <div class="annonce-link" id="annonce-show-link"  data-annonce-id="<%= a.id %>">
+                <div class="annonce-link"  data-annonce-id="<%= a.id %>">
                     <div class="annonce" >
                         <div class="w-25 annonce-image " >
                             <%= link_to image_tag(url_for(a.photo)), annonce_path(a.id) %>  
@@ -309,12 +309,14 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        var myDiv = document.getElementById("annonce-show-link");
-        myDiv.addEventListener("click", function() {
-            var annonceId = myDiv.dataset.annonceId;
-            console.log(annonceId);
-            console.log("annonces/" + annonceId);
-            window.location.href = "annonces/" + annonceId; 
+        var myDivs = document.querySelectorAll(".annonce-link");
+        myDivs.forEach(function(myDiv) {
+            myDiv.addEventListener("click", function() {
+                var annonceId = myDiv.dataset.annonceId;
+                console.log(annonceId);
+                console.log("annonces/" + annonceId);
+                window.location.href = "annonces/" + annonceId; 
+            });
         });
     });
 </script>
